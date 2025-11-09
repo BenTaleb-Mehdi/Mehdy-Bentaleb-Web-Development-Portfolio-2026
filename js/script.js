@@ -329,7 +329,7 @@ const staticData = {
       github_link:
         "https://github.com/BenTaleb-Mehdi/Project_Managemment_flowers",
       image: "Images/dashboard.png",
-      featured: true,
+      featured: false,
       order: 5,
     },
     {
