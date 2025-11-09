@@ -27,7 +27,7 @@ A professional showcase of my web development projects built with **HTML, CSS, J
 
 ### Portfolio page
 
-![Homepage](images/portfolioImg.png)
+![full page](Images/portfolioImg.png)
 
 ---
 
