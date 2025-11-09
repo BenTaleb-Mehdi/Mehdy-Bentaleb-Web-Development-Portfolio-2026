@@ -184,7 +184,7 @@ function updatePerformanceStats() {
     
     const now = performance.now();
     if (!window.lastFrameTime) window.lastFrameTime = now;
-    
+     
     const delta = now - window.lastFrameTime;
     window.lastFrameTime = now;
     
