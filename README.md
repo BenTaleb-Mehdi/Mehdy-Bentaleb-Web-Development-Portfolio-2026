@@ -33,4 +33,4 @@ A professional showcase of my web development projects built with **HTML, CSS, J
 
 ## 🚀 Live Demo
 
-_[click for Demo Portfolio " Mehdi Bentaleb "](https://mehdy-bentaleb.vercel.app/)_
+_[click for Demo Portfolio " Mehdi Bentaleb "](https://mehdi-bentaleb.vercel.app/)_
