@@ -16,6 +16,6 @@ jobs:
 
       # ---- 🔍 Validate HTML files ----
       - name: Validate HTML files
-        uses: Cyb3r-Jak3/html5validator-action@v1.7.1
+        uses: Cyb3r-Jak3/html5validator-action@main
         with:
           root: .
