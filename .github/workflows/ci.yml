@@ -1,35 +1,20 @@
-name: Portfolio Test
+name: Portfolio CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Validate HTML files
-        uses: Cyb3r-Jak3/html5validator-action@v1.7.1
-        with:
-          root: .
-name: Portfolio Test
-
-on:
-  push:
-    branches: [ "main" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
+      # ---- 🔍 Validate HTML files ----
       - name: Validate HTML files
         uses: Cyb3r-Jak3/html5validator-action@v1.7.1
         with:
