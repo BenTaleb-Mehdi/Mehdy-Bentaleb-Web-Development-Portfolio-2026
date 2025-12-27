@@ -1,4 +1,4 @@
-name: Portfolio CI
+name: Validate HTML & CSS
 
 on:
   push:
@@ -11,11 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # ---- 🔍 Validate HTML files ----
-      - name: Validate HTML files
-        uses: Cyb3r-Jak3/html5validator-action@main
+      - name: Validate HTML & CSS
+        uses: anishathalye/proof-html@v2
         with:
-          root: .
+          directory: .
+          check_html: true
+          check_css: true
