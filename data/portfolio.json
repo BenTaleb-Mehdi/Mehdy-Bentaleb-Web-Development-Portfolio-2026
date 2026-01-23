@@ -83,7 +83,7 @@
     }
   ],
   "terminal": {
-    "welcome": "Welcome to Antigravity v2.0. Type 'help' to see available commands.",
+    "welcome": "Welcome to Mehdi Ben taleb v2.0. Type 'help' to see available commands.",
     "commands": {
        "about": "Full-Stack Architect obsessed with performance and design.",
        "skills": "JavaScript, TypeScript, React, Next.js, Node.js, Go, Rust",

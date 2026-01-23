@@ -285,7 +285,7 @@ export default function Home() {
           
           {/* Footer */}
           <footer className="max-w-md pb-16 text-sm text-slate-500 sm:pb-0 font-mono">
-             <p>Designed enabled with Antigravity &reg;</p>
+             <p>Designed enabled with Mehdi Ben taleb &reg;</p>
           </footer>
         </main>
       </div>

@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Antigravity Portfolio",
+  title: "Mehdi Ben taleb Portfolio",
   description: "A data-driven portfolio with floating effects",
 };
 
