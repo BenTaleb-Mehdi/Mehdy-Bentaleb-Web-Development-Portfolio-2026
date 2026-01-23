@@ -1,0 +1,94 @@
+{
+  "profile": {
+    "name": "Mehdi Ben Taleb",
+    "role": "Full-Stack Developer ",
+    "bio": "I craft high-performance digital experiences that defy gravity.",
+    "socialLinks": {
+      "github": "https://github.com/janedoe",
+      "linkedin": "https://linkedin.com/in/janedoe",
+      "twitter": "https://twitter.com/janedoe",
+      "email": "mailto:jane@example.com"
+    }
+  },
+  "skills": [
+    { "name": "Next.js 14", "icon": "Code2" },
+    { "name": "React Server Components", "icon": "Zap" },
+    { "name": "TypeScript", "icon": "FileCode" },
+    { "name": "Tailwind CSS", "icon": "Layout" },
+    { "name": "Framer Motion", "icon": "Layers" },
+    { "name": "Node.js", "icon": "Server" },
+    { "name": "PostgreSQL", "icon": "Database" },
+    { "name": "Docker", "icon": "Box" },
+    { "name": "AWS", "icon": "Cloud" },
+    { "name": "Redis", "icon": "Zap" }
+  ],
+  "experience": [
+    {
+      "company": "Tech Innovators Inc.",
+      "role": "Senior Frontend Engineer",
+      "duration": "2021 - Present",
+      "description": "Leading the frontend migration to Next.js and mentoring junior developers.",
+      "techUsed": ["React", "Next.js", "TypeScript", "Redux"],
+      "metrics": [
+         "Boosted site performance by 40% using Server Components",
+         "Reduced build times by 60% with Turborepo"
+      ]
+    },
+    {
+      "company": "Web Solutions Ltd.",
+      "role": "Full Stack Developer",
+      "duration": "2018 - 2021",
+      "description": "Developed and maintained client websites and internal tools.",
+      "techUsed": ["Vue.js", "Laravel", "MySQL"],
+      "metrics": [
+         "Delivered 15+ custom client projects",
+         "Implemented automated CI/CD pipelines"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Technology",
+      "degree": "Bachelor of Science in Computer Science",
+      "duration": "2014 - 2018",
+      "description": "Focus on Software Engineering and Artificial Intelligence. Graduated with Honors."
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "A headless e-commerce solution with dynamic inventory management.",
+      "techStack": {
+         "Frontend": ["Next.js", "Tailwind", "Framer Motion"],
+         "Backend": ["NestJS", "PostgreSQL", "Redis"],
+         "DevOps": ["Docker", "AWS ECS"]
+      },
+      "metrics": "Increased conversion rate by 25%",
+      "githubLink": "https://github.com/janedoe/ecommerce",
+      "liveLink": "https://ecommerce-platform.demo",
+      "image": "/projects/ecommerce.png"
+    },
+    {
+      "title": "AI Task Manager 2",
+      "description": "Smart task prioritization using NLP and machine learning.",
+      "techStack": {
+         "Frontend": ["React", "Recoil", "Material UI"],
+         "Backend": ["Python", "FastAPI", "TensorFlow"],
+         "DevOps": ["Vercel", "Supabase"]
+      },
+      "metrics": "Processed 1M+ tasks with 99.9% uptime",
+      "githubLink": "https://github.com/janedoe/taskn",
+      "liveLink": "https://taskn.demo",
+      "image": "/projects/taskn.png"
+    }
+  ],
+  "terminal": {
+    "welcome": "Welcome to Antigravity v2.0. Type 'help' to see available commands.",
+    "commands": {
+       "about": "Full-Stack Architect obsessed with performance and design.",
+       "skills": "JavaScript, TypeScript, React, Next.js, Node.js, Go, Rust",
+       "contact": "jane@example.com",
+       "clear": "Clearing terminal..."
+    }
+  }
+}
