@@ -91,7 +91,7 @@ export default function Terminal({ triggerCommand, onCommandComplete }: Terminal
 
   return (
     <>
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-full max-w-2xl px-4">
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[calc(100%-2rem)] max-w-2xl px-4">
           <AnimatePresence mode="wait">
             {!isOpen ? (
                 <motion.button

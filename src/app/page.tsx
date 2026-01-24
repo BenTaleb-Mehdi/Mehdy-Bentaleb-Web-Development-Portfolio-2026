@@ -9,6 +9,7 @@ import portfolioData from "../../data/portfolio.json";
 import * as LucideIcons from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ProjectModal from "@/components/ProjectModal";
 
 // Helper to get icon by string name
 const DynamicIcon = ({ name }: { name: string }) => {
@@ -21,6 +22,7 @@ export default function Home() {
   const { profile, skills, experience, projects } = portfolioData;
   const [activeSection, setActiveSection] = useState("about");
   const [terminalTrigger, setTerminalTrigger] = useState<string | null>(null);
+  const [activeProject, setActiveProject] = useState<any | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,7 +119,7 @@ export default function Home() {
           
           {/* About Section */}
           <section id="about" className="scroll-mt-16 lg:scroll-mt-24">
-             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+             <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// About</h2>
              </div>
              <FloatingCard delay={0.2} weight="light" className="p-6">
@@ -132,7 +134,7 @@ export default function Home() {
 
           {/* Skills Section (New) */}
           <section id="skills" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Skills</h2>
             </div>
              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -150,7 +152,7 @@ export default function Home() {
 
           {/* Experience Section */}
           <section id="experience" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Experience</h2>
             </div>
             <div>
@@ -200,7 +202,7 @@ export default function Home() {
 
           {/* Education Section */}
           <section id="education" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Education</h2>
             </div>
             <div>
@@ -231,22 +233,24 @@ export default function Home() {
 
           {/* Projects Section */}
           <section id="projects" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Projects</h2>
             </div>
             {/* Grid Layout Fix */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
-                  <FloatingCard key={index} delay={index * 0.1} weight="heavy" className="group relative flex flex-col h-full bg-slate-800/50 hover:bg-slate-800/80 transition-all p-6 border border-slate-700 hover:border-accent/30">
+                  <FloatingCard 
+                    key={index} 
+                    delay={index * 0.1} 
+                    weight="heavy" 
+                    className="group relative flex flex-col h-full bg-slate-800/50 hover:bg-slate-800/80 transition-all p-6 border border-slate-700 hover:border-accent/30 cursor-pointer"
+                    onClick={() => setActiveProject(project)}
+                  >
                         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                         <div className="z-10 flex flex-col h-full">
                           <header className="flex justify-between items-start mb-4">
-                              <h3 className="text-xl font-bold text-slate-200 group-hover:text-accent transition-colors">
-                                <a href={project.liveLink} target="_blank" rel="noreferrer" className="flex items-center gap-1">
-                                    <span className="absolute inset-0"></span>
+                              <h3 className="text-xl font-bold text-slate-200 group-hover:text-accent transition-colors flex items-center gap-1">
                                     {project.title}
-                                    <LucideIcons.MoveUpRight size={16} />
-                                </a>
                               </h3>
                               <div className="z-20 flex gap-2">
                                   {project.githubLink && (
@@ -289,6 +293,11 @@ export default function Home() {
           </footer>
         </main>
       </div>
+      <ProjectModal 
+        isOpen={!!activeProject} 
+        onClose={() => setActiveProject(null)} 
+        project={activeProject} 
+      />
     </div>
   );
 }

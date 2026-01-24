@@ -9,6 +9,7 @@ interface FloatingCardProps {
   className?: string;
   disableAnimation?: boolean;
   weight?: "light" | "medium" | "heavy";
+  onClick?: () => void;
 }
 
 export default function FloatingCard({ 
@@ -16,7 +17,8 @@ export default function FloatingCard({
   delay = 0, 
   className = "",
   disableAnimation = false,
-  weight = "medium"
+  weight = "medium",
+  onClick
 }: FloatingCardProps) {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -36,7 +38,10 @@ export default function FloatingCard({
 
   if (!isMounted || disableAnimation) {
     return (
-        <div className={`backdrop-blur-md bg-white/5 border border-white/10 rounded-lg shadow-xl ${className}`}>
+        <div 
+          className={`backdrop-blur-md bg-white/5 border border-white/10 rounded-lg shadow-xl ${className}`}
+          onClick={onClick}
+        >
           {children}
         </div>
     );
@@ -44,6 +49,7 @@ export default function FloatingCard({
 
   return (
     <motion.div
+      onClick={onClick}
       initial={{ y: 0 }}
       animate={{
         y: [0, y, 0],

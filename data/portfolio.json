@@ -66,7 +66,8 @@
       "metrics": "Increased conversion rate by 25%",
       "githubLink": "https://github.com/janedoe/ecommerce",
       "liveLink": "https://ecommerce-platform.demo",
-      "image": "/projects/ecommerce.png"
+      "image": "/projects/ecommerce.png",
+      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     {
       "title": "AI Task Manager 2",
