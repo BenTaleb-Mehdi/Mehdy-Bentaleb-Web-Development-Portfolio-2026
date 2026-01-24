@@ -8,19 +8,32 @@ const inter = Inter({
   adjustFontFallback: false,
 });
 
-
 export const metadata: Metadata = {
-  title: "Mehdi Bentaleb - Full Stack Developer Tangier | Laravel & React",
-  description: "Développeur Web Full Stack basé à Tanger, Maroc. Expert en Laravel, React, et solutions digitales performantes.",
-  keywords: ["Développeur Web Tanger", "Laravel Expert Morocco", "Full Stack Developer", "Mehdi Bentaleb", "Solicode", "Web Development Tangier", "Création Site Web Maroc"],
+  // Optimized for Local SEO in Tangier
+  title: "Mehdi Bentaleb | Full-Stack Developer Tangier | Laravel & React Expert",
+  description: "Full-Stack Web Developer based in Tangier, Morocco. Specialized in Laravel, PHP, and React solutions for businesses.",
+  keywords: ["Développeur Web Tanger", "Laravel Expert Morocco", "Full Stack Developer", "Mehdi Bentaleb", "Web Development Tangier", "Freelance Developer Morocco"],
   authors: [{ name: "Mehdi Bentaleb" }],
+  verification: {
+    google: "mRDjsto03AqqaQ0A_3UJyk8330wcTi2KzblMbi8Lzgs"
+  },
+  // URL matching your actual Vercel deployment
+  metadataBase: new URL("https://mehdy-bentaleb-web-development-port.vercel.app"),
   openGraph: {
     type: "website",
-    locale: "fr_MA",
-    url: "https://mehdi-bentaleb.vercel.app",
-    title: "Mehdi Bentaleb - Full Stack Developer Tangier",
-    description: "Expert Laravel, PHP & React. Création de sites web professionnels à Tanger.",
+    locale: "en_US",
+    url: "https://mehdy-bentaleb-web-development-port.vercel.app",
+    title: "Mehdi Bentaleb - Full-Stack Developer Tangier",
+    description: "Expert Laravel, PHP & React. Building high-performance web applications in Tangier.",
     siteName: "Mehdi Bentaleb Portfolio",
+    images: [
+      {
+        url: "/og-image.jpg", // Make sure to add this image in your public folder
+        width: 1200,
+        height: 630,
+        alt: "Mehdi Bentaleb Portfolio",
+      },
+    ],
   }
 };
 
@@ -28,35 +41,36 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mehdi Bentaleb",
     "jobTitle": "Full Stack Web Developer",
-    "url": "https://mehdi-bentaleb.vercel.app",
+    "url": "https://mehdy-bentaleb-web-development-port.vercel.app",
     "telephone": "+212 630 829 654",
     "email": "Mehdibentaleb548@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tangier",
-      "addressCountry": "Morocco"
+      "addressRegion": "Tanger-Tétouan-Al Hoceïma",
+      "addressCountry": "MA"
     },
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Solicode & Miage Tangier"
-    },
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Solicode Tangier" },
+      { "@type": "EducationalOrganization", "name": "Miage Tangier" }
+    ],
     "sameAs": [
       "https://github.com/mehdy-bentaleb",
       "https://linkedin.com/in/mehdy-bentaleb"
     ],
-    "knowsAbout": ["Laravel", "PHP", "React", "Next.js", "MySQL", "Tailwind CSS"]
+    "knowsAbout": ["Laravel", "PHP", "React", "Next.js", "MySQL", "Tailwind CSS", "Web Architecture"]
   };
 
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* JSON-LD is placed here for better SEO crawling */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -66,4 +80,3 @@ export default function RootLayout({
     </html>
   );
 }
-
