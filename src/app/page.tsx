@@ -140,11 +140,11 @@ export default function Home() {
              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                {/* @ts-ignore */}
                {skills.map((skill, index) => (
-                 <FloatingCard key={index} delay={index * 0.05} weight="light" className="p-3 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-accent/30 transition-all group flex items-center gap-3">
-                   <div className="text-accent/80 group-hover:text-accent transition-colors">
+                 <FloatingCard key={index} delay={index * 0.05} weight="light" className="p-3 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-accent/30 transition-all group flex items-center gap-3 min-w-0">
+                   <div className="text-accent/80 group-hover:text-accent transition-colors shrink-0">
                       <DynamicIcon name={skill.icon} />
                    </div>
-                   <span className="text-slate-300 text-sm font-mono group-hover:text-white transition-colors">{skill.name}</span>
+                   <span className="text-slate-300 text-sm font-mono group-hover:text-white transition-colors truncate">{skill.name}</span>
                  </FloatingCard>
                ))}
              </div>

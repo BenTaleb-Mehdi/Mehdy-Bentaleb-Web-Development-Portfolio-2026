@@ -12,7 +12,7 @@ export default function Hero({ onTriggerTerminal }: HeroProps) {
 
   return (
     <section className="flex flex-col items-center lg:items-start space-y-6 py-0 lg:py-0 p-2">
-      <FloatingCard delay={0} className="w-full p-3 relative !bg-transparent !border-none !shadow-none" weight="heavy">
+      <FloatingCard delay={0} className="w-full p-3 relative !bg-transparent !border-none !shadow-none overflow-hidden" weight="heavy">
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-50"></div>
         
         <div className="space-y-4 relative z-10">
