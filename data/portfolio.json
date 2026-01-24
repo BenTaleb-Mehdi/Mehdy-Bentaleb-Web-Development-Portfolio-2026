@@ -104,5 +104,12 @@
     "liveLink": "http://gymfitness-alpha.vercel.app/"
 
   }
-  ]
+  ],
+  "terminal": {
+    "commands": {
+      "about": "Full-Stack Web Developer aiming to build robust ecosystem-driven applications. Experienced with Laravel, React, and Modern UI/UX.",
+      "skills": "Core: Laravel, PHP, MySQL, React, Next.js, Tailwind CSS. Tools: Git, VS Code, Composer.",
+      "contact": "Email: Mehdibentaleb548@gmail.com | LinkedIn: https://www.linkedin.com/in/mehdi-bentaleb | GitHub: https://github.com/BenTaleb-Mehdi"
+    }
+  }
 }
