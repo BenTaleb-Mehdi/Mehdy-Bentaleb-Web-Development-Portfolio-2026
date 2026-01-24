@@ -59,7 +59,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-6xl bg-[#1e293b]/95 border border-slate-700/50 rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl flex flex-col max-h-[90vh]"
+            className="relative w-full max-w-6xl bg-[#1e293b]/95 border border-slate-700/50 rounded-xl shadow-2xl overflow-hidden backdrop-blur-md flex flex-col max-h-[90vh]"
           >
             {/* Window Header (Title Bar) */}
             <div className="h-10 bg-slate-800/50 border-b border-slate-700/50 flex items-center px-4 justify-between shrink-0 select-none z-20">
@@ -94,6 +94,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                                 className="w-full h-full"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
+                                loading="lazy"
                              />
                              <button 
                                 onClick={() => setShowVideo(false)}

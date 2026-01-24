@@ -265,7 +265,13 @@ export default function Home() {
                               </h3>
                               <div className="z-20 flex gap-2">
                                   {project.githubLink && (
-                                      <a href={project.githubLink} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-accent transition-colors">
+                                      <a 
+                                        href={project.githubLink} 
+                                        target="_blank" 
+                                        rel="noreferrer" 
+                                        className="text-slate-400 hover:text-accent transition-colors"
+                                        onClick={(e) => e.stopPropagation()}
+                                      >
                                           <Github size={18} />
                                       </a>
                                   )}
