@@ -65,8 +65,8 @@ export default function Home() {
 
       <div className="lg:flex lg:justify-between lg:gap-4">
         {/* Left Column (Sticky Sidebar) */}
-        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-12 lg:overflow-hidden">
-          <div className="space-y-12 w-full max-w-lg mx-auto"> 
+        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-12  lg:overflow-hidden">
+          <div className="space-y-6 lg:space-y-12 w-full max-w-lg mx-auto py-8 lg:py-12"> 
             <Hero onTriggerTerminal={handleHeroTrigger} />
             
             {/* Navigation */}
@@ -115,7 +115,7 @@ export default function Home() {
         </header>
 
         {/* Right Column (Scrollable Content) - 60% Width */}
-        <main className="pt-24 lg:w-3/5 lg:py-24 space-y-12"> {/* Increased gap between sections */}
+        <main className="pt-12 lg:w-3/5 lg:py-24 space-y-12"> {/* Increased gap between sections */}
           
           {/* About Section */}
           <section id="about" className="scroll-mt-16 lg:scroll-mt-24">
