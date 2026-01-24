@@ -1,36 +1,42 @@
-# 💻 Mehdi Ben Taleb Web Development Portfolio 2026
+# Mehdi Bentaleb - Full Stack Web Developer 🚀
 
-A professional showcase of my web development projects built with **HTML, CSS, JavaScript, and Three.js**. Features interactive interfaces, 3D effects, animations, and fully responsive designs. Includes live demos, screenshots, and project documentation.
+**Based in Tangier, Morocco 🇲🇦**
 
----
+Hi! I'm Mehdi Bentaleb, a passionate Full-Stack Developer specializing in high-performance web applications using **Laravel** and **React**. I combine robust backend architecture with stunning frontend experiences to deliver digital solutions that defy gravity.
 
-## ✨ Features
+## 👨‍💻 Profile
+- **Role:** Full-Stack Developer
+- **Location:** Tangier, Morocco
+- **Email:** [Mehdibentaleb548@gmail.com](mailto:Mehdibentaleb548@gmail.com)
+- **LinkedIn:** [linkedin.com/in/mehdy-bentaleb](https://linkedin.com/in/mehdy-bentaleb)
+- **GitHub:** [github.com/mehdy-bentaleb](https://github.com/mehdy-bentaleb)
 
-- 🌐 **Interactive Web Interfaces** – Smooth, user-friendly UI designs
-- 🎨 **3D Effects & Animations** – Built with Three.js for engaging visuals
-- 📱 **Responsive Design** – Optimized for desktop, tablet, and mobile
-- 📸 **Screenshots & Demos** – Live previews of each project
-- 📂 **Well-documented** – Clear structure and code documentation
-
----
+## 🎓 Education
+**Technician Specialized in IT Development**
+*Solicode & Miage Tangier (2022 - 2025)*
+- Focused on software engineering, database management, and modern web frameworks.
+- Mastered the art of clean code and performance optimization.
 
 ## 🛠️ Tech Stack
+I build scalable solutions using:
+- **Backend:** Laravel (Expert), PHP, MySQL, Spatie, Java/Kotlin
+- **Frontend:** React, Next.js, Tailwind CSS, JavaScript (ES6)
+- **Tools:** Git, Docker, VS Code
 
-- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) **HTML5**
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) **CSS3**
-- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **JavaScript**
-- ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white) **Three.js**
+## 💼 Featured Projects
+### [Luxury Flower E-Commerce](https://mehdi-bentaleb.vercel.app/)
+A premium e-commerce platform for a flower shop featuring:
+- **Spatie-powered Admin Dashboard** for inventory and order management.
+- Seamless, responsive frontend built with Tailwind CSS.
+- Optimized for mobile and SEO.
+
+### [Ban's Coffee Platform](https://mehdi-bentaleb.vercel.app/)
+A modern, interactive coffee shop experience:
+- Dynamic product pages with smooth animations.
+- Fully responsive design.
+
+## 🌟 Philosophy
+I believe in writing code that is not only functional but also maintainable and performant. My background at Solicode has instilled a discipline for best practices and a continuous drive for learning the latest technologies.
 
 ---
-
-## 📸 Screenshots
-
-### Portfolio page
-
-![full page](Images/portfolioImg.png)
-
----
-
-## 🚀 Live Demo
-
-_[click for Demo Portfolio " Mehdi Bentaleb "](https://mehdi-bentaleb.vercel.app/)_
+*Open to freelance opportunities and full-time roles in Tangier and remote.*

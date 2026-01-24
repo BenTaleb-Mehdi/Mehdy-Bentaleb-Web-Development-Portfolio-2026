@@ -6,17 +6,11 @@ import Hero from "@/components/Hero";
 import Magnetic from "@/components/Magnetic";
 import Terminal from "@/components/Terminal";
 import portfolioData from "../../data/portfolio.json";
-import * as LucideIcons from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ExternalLink, Instagram, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProjectModal from "@/components/ProjectModal";
-
-// Helper to get icon by string name
-const DynamicIcon = ({ name }: { name: string }) => {
-  // @ts-ignore - Dynamic access to lucide icons
-  const IconComponent = LucideIcons[name];
-  return IconComponent ? <IconComponent size={16} /> : <LucideIcons.Code2 size={16} />;
-};
+import TechIcon from "@/components/TechIcon";
 
 export default function Home() {
   const { profile, skills, experience, projects } = portfolioData;
@@ -103,10 +97,13 @@ export default function Home() {
                   <li key={key}>
                   <Magnetic>
                       <a href={url} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-accent transition-colors block p-2">
-                          {key === 'github' && <LucideIcons.Github size={24} />}
-                          {key === 'linkedin' && <LucideIcons.Linkedin size={24} />}
-                          {key === 'twitter' && <LucideIcons.Twitter size={24} />}
-                          {key === 'email' && <LucideIcons.Mail size={24} />}
+                          {key === 'github' && <Github size={24} />}
+                          {key === 'linkedin' && <Linkedin size={24} />}
+                          {key === 'twitter' && <Twitter size={24} />}
+                          {key === 'instagram' && <Instagram size={24} />}
+                          {key === 'email' && <Mail size={24} />}
+                          {/* Fallback for other keys */}
+                          {!['github', 'linkedin', 'twitter', 'instagram', 'email'].includes(key) && <LinkIcon size={24} />}
                       </a>
                   </Magnetic>
                   </li>
@@ -142,7 +139,7 @@ export default function Home() {
                {skills.map((skill, index) => (
                  <FloatingCard key={index} delay={index * 0.05} weight="light" className="p-3 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-accent/30 transition-all group flex items-center gap-3 min-w-0">
                    <div className="text-accent/80 group-hover:text-accent transition-colors shrink-0">
-                      <DynamicIcon name={skill.icon} />
+                      <TechIcon name={skill.name} className="w-5 h-5" />
                    </div>
                    <span className="text-slate-300 text-sm font-mono group-hover:text-white transition-colors truncate">{skill.name}</span>
                  </FloatingCard>
@@ -217,9 +214,22 @@ export default function Home() {
                         </header>
                         <div className="z-10 sm:col-span-6">
                           <h3 className="font-medium leading-snug text-slate-200">
-                              <span className="text-lg font-bold text-slate-200 group-hover:text-accent transition-colors">
-                                {edu.school}
-                              </span>
+                              {/* @ts-ignore */}
+                              {edu.link ? (
+                                <a 
+                                  href={edu.link} 
+                                  target="_blank" 
+                                  rel="noreferrer" 
+                                  className="text-lg font-bold text-slate-200 group-hover:text-accent transition-colors flex items-center gap-1 hover:underline"
+                                >
+                                  {edu.school}
+                                  <ExternalLink size={14} className="inline-block opacity-0 group-hover:opacity-100 transition-opacity" />
+                                </a>
+                              ) : (
+                                <span className="text-lg font-bold text-slate-200 group-hover:text-accent transition-colors">
+                                  {edu.school}
+                                </span>
+                              )}
                           </h3>
                           <p className="text-slate-400 mt-1">{edu.degree}</p>
                           <p className="mt-2 text-sm leading-normal text-slate-400">{edu.description}</p>
@@ -238,7 +248,8 @@ export default function Home() {
             </div>
             {/* Grid Layout Fix */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {projects.map((project, index) => (
+                {/* @ts-ignore */}
+                {projects.map((project: any, index) => (
                   <FloatingCard 
                     key={index} 
                     delay={index * 0.1} 
@@ -255,15 +266,24 @@ export default function Home() {
                               <div className="z-20 flex gap-2">
                                   {project.githubLink && (
                                       <a href={project.githubLink} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-accent transition-colors">
-                                          <LucideIcons.Github size={18} />
+                                          <Github size={18} />
                                       </a>
                                   )}
                               </div>
                           </header>
 
                           {/* Image Placeholder - Verified z-index */}
-                          <div className="aspect-video w-full rounded border border-slate-700 bg-slate-900/50 flex items-center justify-center mb-4 group-hover:border-accent/30 transition-colors pointer-events-none">
-                             <span className="text-xs text-slate-500 font-mono">PROJECT PREVIEW</span>
+                          <div className="aspect-video w-full rounded border border-slate-700 bg-slate-900/50 flex items-center justify-center mb-4 group-hover:border-accent/30 transition-colors overflow-hidden relative">
+                             {/* @ts-ignore */}
+                             {project.image ? (
+                               <img 
+                                 src={project.image} 
+                                 alt={project.title} 
+                                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                               />
+                             ) : (
+                               <span className="text-xs text-slate-500 font-mono">PROJECT PREVIEW</span>
+                             )}
                           </div>
 
                           <p className="mt-auto text-sm leading-normal text-slate-400 mb-4">{project.description}</p>
@@ -274,9 +294,9 @@ export default function Home() {
 
                          <div className="flex flex-wrap gap-2 mt-auto">
                             {/* Tech Stack Flattened for Card */}
-                            {Object.values(project.techStack).flat().slice(0, 4).map((tech) => (
-                                <span key={tech} className="rounded-full bg-teal-400/10 px-2 py-1 text-xs font-medium leading-5 text-teal-300">
-                                    {tech}
+                            {Object.values(project.techStack).flat().slice(0, 4).map((tech: any) => (
+                                <span key={tech as string} className="rounded-full bg-teal-400/10 px-2 py-1 text-xs font-medium leading-5 text-teal-300">
+                                    {tech as string}
                                 </span>
                             ))}
                           </div>

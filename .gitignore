@@ -27,3 +27,6 @@ ts-debug.log*
 
 # vercel
 .vercel
+
+# media
+*.mp4

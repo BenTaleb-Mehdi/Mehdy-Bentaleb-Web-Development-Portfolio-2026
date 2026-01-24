@@ -1,95 +1,108 @@
 {
-  "profile": {
-    "name": "Mehdi Ben Taleb",
-    "role": "Full-Stack Developer ",
-    "bio": "I craft high-performance digital experiences that defy gravity.",
+"profile": {
+    "name": "Mehdi Bentaleb",
+    "role": "Full-Stack Web Developer Laravel",
+    "bio": "Specialized in building robust web applications using the Laravel ecosystem. Based in Tangier, Morocco.",
     "socialLinks": {
-      "github": "https://github.com/janedoe",
-      "linkedin": "https://linkedin.com/in/janedoe",
-      "twitter": "https://twitter.com/janedoe",
-      "email": "mailto:jane@example.com"
+      "github": "https://github.com/BenTaleb-Mehdi",
+      "linkedin": "https://www.linkedin.com/in/mehdi-bentaleb",
+      "email": "mailto:Mehdibentaleb548@gmail.com",
+      "instagram": "https://www.instagram.com/mehdi__bentaleb/"
     }
   },
-  "skills": [
-    { "name": "Next.js 14", "icon": "Code2" },
-    { "name": "React Server Components", "icon": "Zap" },
-    { "name": "TypeScript", "icon": "FileCode" },
-    { "name": "Tailwind CSS", "icon": "Layout" },
-    { "name": "Framer Motion", "icon": "Layers" },
-    { "name": "Node.js", "icon": "Server" },
-    { "name": "PostgreSQL", "icon": "Database" },
-    { "name": "Docker", "icon": "Box" },
-    { "name": "AWS", "icon": "Cloud" },
-    { "name": "Redis", "icon": "Zap" }
+ "skills": [
+    { "name": "Laravel", "icon": "laravel" },
+    { "name": "Composer", "icon": "composer" },
+    { "name": "MySQL", "icon": "mysql" },
+    { "name": "PHP", "icon": "php" },
+    { "name": "Kotlin", "icon": "kotlin" },
+    { "name": "Java", "icon": "java" },
+    { "name": "Next.js", "icon": "nextjs" },
+    { "name": "VS Code", "icon": "code-xml" },
+    { "name": "JavaScript ES6", "icon": "javascript es6" },
+    { "name": "Tailwind CSS", "icon": "tailwind" },
+    { "name": "React", "icon": "react" },
+    { "name": "Git", "icon": "git" }
   ],
   "experience": [
+        {
+          "company": "Miage Tangier (PFE)",
+          "role": "Full-Stack Web Developer",
+          "duration": "2025/04 - 2025/06",
+          "location": "Tangier, Morocco",
+          "description": "Designed and developed an internal School Management System for Miage Tangier to automate student administration and internship tracking.",
+          "techUsed": ["PHP", "MySQL", "CSS3", "JavaScript","chart.js"],
+          "metrics": [
+            "Built a comprehensive student management module to track academic records and attendance.",
+            "Developed a dedicated portal to manage partner companies and monitor student internship visits.",
+            "Implemented a secure role-based access control (RBAC) for administration, teachers, and staff."
+          ]
+        },
+        {
+          "company": "Freelance Developer",
+          "role": "Full-Stack Web Developer",
+          "duration": "2025/12 - 2026/01",
+          "location": "Tangier, Morocco",
+          "description": "Providing end-to-end web development services for local businesses and startups in the Tangier region.",
+          "techUsed": ["laravel", "MySQL", "Tailwind CSS", "JavaScript"],
+          "metrics": [
+            "Developed a custom E-commerce platform for a local clothing brand, featuring a dynamic product catalog and order tracking.",
+            "Built responsive, SEO-optimized landing pages to increase brand visibility and customer conversion rates.",
+            "Integrated secure payment gateways and intuitive admin panels for seamless inventory management."
+          ]
+        }
+  ],
+"education": [
     {
-      "company": "Tech Innovators Inc.",
-      "role": "Senior Frontend Engineer",
-      "duration": "2021 - Present",
-      "description": "Leading the frontend migration to Next.js and mentoring junior developers.",
-      "techUsed": ["React", "Next.js", "TypeScript", "Redux"],
-      "metrics": [
-         "Boosted site performance by 40% using Server Components",
-         "Reduced build times by 60% with Turborepo"
-      ]
+      "school": "Miage Tangier",
+      "degree": "Technician specializing in IT development",
+      "duration": "2022 - 2025",
+      "link": "https://groupemiage.net",
+      "description": "Deep dive into Backend architecture, MVC patterns, and Database optimization."
     },
     {
-      "company": "Web Solutions Ltd.",
-      "role": "Full Stack Developer",
-      "duration": "2018 - 2021",
-      "description": "Developed and maintained client websites and internal tools.",
-      "techUsed": ["Vue.js", "Laravel", "MySQL"],
-      "metrics": [
-         "Delivered 15+ custom client projects",
-         "Implemented automated CI/CD pipelines"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "school": "University of Technology",
-      "degree": "Bachelor of Science in Computer Science",
-      "duration": "2014 - 2018",
-      "description": "Focus on Software Engineering and Artificial Intelligence. Graduated with Honors."
+      "school": "Solicode Tangier",
+      "degree": "Full-Stack Web Development Path",
+      "duration": "2022 - 2025",
+      "link": "https://solicode.co",
+      "description": "Advanced training in modern web frameworks and collaborative coding environments."
     }
   ],
   "projects": [
-    {
-      "title": "E-Commerce Platform",
-      "description": "A headless e-commerce solution with dynamic inventory management.",
-      "techStack": {
-         "Frontend": ["Next.js", "Tailwind", "Framer Motion"],
-         "Backend": ["NestJS", "PostgreSQL", "Redis"],
-         "DevOps": ["Docker", "AWS ECS"]
-      },
-      "metrics": "Increased conversion rate by 25%",
-      "githubLink": "https://github.com/janedoe/ecommerce",
-      "liveLink": "https://ecommerce-platform.demo",
-      "image": "/projects/ecommerce.png",
-      "demoVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  {
+    "title": "Market Store Management",
+    "description": "A professional retail management system designed for inventory control, sales tracking, and automated reporting for local businesses.",
+    "techStack": { 
+      "Backend": ["Laravel", "PHP", "MySQL"], 
+      "Frontend": ["Tailwind CSS", "JavaScript"] 
     },
-    {
-      "title": "AI Task Manager 2",
-      "description": "Smart task prioritization using NLP and machine learning.",
-      "techStack": {
-         "Frontend": ["React", "Recoil", "Material UI"],
-         "Backend": ["Python", "FastAPI", "TensorFlow"],
-         "DevOps": ["Vercel", "Supabase"]
-      },
-      "metrics": "Processed 1M+ tasks with 99.9% uptime",
-      "githubLink": "https://github.com/janedoe/taskn",
-      "liveLink": "https://taskn.demo",
-      "image": "/projects/taskn.png"
-    }
-  ],
-  "terminal": {
-    "welcome": "Welcome to Mehdi Ben taleb v2.0. Type 'help' to see available commands.",
-    "commands": {
-       "about": "Full-Stack Architect obsessed with performance and design.",
-       "skills": "JavaScript, TypeScript, React, Next.js, Node.js, Go, Rust",
-       "contact": "jane@example.com",
-       "clear": "Clearing terminal..."
-    }
+    "githubLink": "https://github.com/BenTaleb-Mehdi/Market-Store",
+    "image": "/projects/market-store.png",
+    "demoVideo": "/projects/market-store.mp4"
+  },
+{
+  "title": "Drive-Rent Management System",
+  "description": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
+  "techStack": { 
+    "Backend": ["Laravel", "PHP", "MySQL"], 
+    "Frontend": ["Tailwind CSS", "Blade", "JavaScript"] 
+  },
+  "githubLink": "https://github.com/BenTaleb-Mehdi/project-location-cars",
+   "image": "/projects/location-cars.png",
+  "demoVideo": "/projects/location-cars.mp4"
+},
+   {
+    "title": "GymFitness Frontend",
+    "description": "A high-performance, responsive landing page for a fitness club, featuring smooth scroll animations, a dynamic BMI calculator, and pricing plan layouts.",
+    "techStack": { 
+      "Core": ["HTML5", "CSS3"], 
+      "Logic": ["JavaScript (ES6)"],
+      "Design": ["Responsive UI", "Flexbox/Grid"]
+    },
+    "image": "/projects/landingpage-gym.png",
+    "githubLink": "https://github.com/BenTaleb-Mehdi/GYMFITNESS",
+    "liveLink": "http://gymfitness-alpha.vercel.app/"
+
   }
+  ]
 }
