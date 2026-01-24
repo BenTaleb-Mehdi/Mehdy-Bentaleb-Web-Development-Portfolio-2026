@@ -58,7 +58,7 @@ export default function Home() {
   };
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-0 font-sans md:px-12 md:py-20 lg:px-16 lg:py-0 relative">
+    <div className="mx-auto min-h-screen max-w-screen-xl px-4 py-0 font-sans md:px-12 md:py-20 lg:px-16 lg:py-0 relative">
       <CustomCursor />
       <ParticleBackground />
       <Terminal triggerCommand={terminalTrigger} onCommandComplete={handleCommandComplete} />
@@ -119,10 +119,10 @@ export default function Home() {
           
           {/* About Section */}
           <section id="about" className="scroll-mt-16 lg:scroll-mt-24">
-             <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+             <div className="sticky top-0 z-20 -mx-4 mb-4 bg-slate-900/75 px-4 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// About</h2>
              </div>
-             <FloatingCard delay={0.2} weight="light" className="p-6">
+             <FloatingCard delay={0.2} weight="light" className="p-4 md:p-6">
                  <p className="mb-4 text-slate-400 leading-relaxed">
                    {profile.bio} I specialize in building specialized software solutions that are both robust and aesthetically pleasing. 
                  </p>
@@ -134,7 +134,7 @@ export default function Home() {
 
           {/* Skills Section (New) */}
           <section id="skills" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-4 mb-4 bg-slate-900/75 px-4 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Skills</h2>
             </div>
              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -152,14 +152,14 @@ export default function Home() {
 
           {/* Experience Section */}
           <section id="experience" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-4 mb-4 bg-slate-900/75 px-4 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Experience</h2>
             </div>
             <div>
               <ol className="group/list space-y-12">
                 {experience.map((job, index) => (
                   <li key={index}>
-                    <FloatingCard delay={index * 0.1} weight="medium" className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-6">
+                    <FloatingCard delay={index * 0.1} weight="medium" className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 md:p-6">
                         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                         <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
                           {job.duration}
@@ -202,7 +202,7 @@ export default function Home() {
 
           {/* Education Section */}
           <section id="education" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-4 mb-4 bg-slate-900/75 px-4 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
               <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Education</h2>
             </div>
             <div>
@@ -210,7 +210,7 @@ export default function Home() {
                  {/* @ts-ignore */}
                  {portfolioData.education && portfolioData.education.map((edu, index) => (
                   <li key={index}>
-                    <FloatingCard delay={index * 0.1} weight="medium" className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-6">
+                    <FloatingCard delay={index * 0.1} weight="medium" className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 p-4 md:p-6">
                         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                         <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
                           {edu.duration}
@@ -233,7 +233,7 @@ export default function Home() {
 
           {/* Projects Section */}
           <section id="projects" className="scroll-mt-16 lg:scroll-mt-24">
-            <div className="sticky top-0 z-20 -mx-6 mb-4 bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+            <div className="sticky top-0 z-20 -mx-4 mb-4 bg-slate-900/75 px-4 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                <h2 className="text-sm font-mono font-bold uppercase tracking-widest text-accent">// Projects</h2>
             </div>
             {/* Grid Layout Fix */}
@@ -243,7 +243,7 @@ export default function Home() {
                     key={index} 
                     delay={index * 0.1} 
                     weight="heavy" 
-                    className="group relative flex flex-col h-full bg-slate-800/50 hover:bg-slate-800/80 transition-all p-6 border border-slate-700 hover:border-accent/30 cursor-pointer"
+                    className="group relative flex flex-col h-full bg-slate-800/50 hover:bg-slate-800/80 transition-all p-4 md:p-6 border border-slate-700 hover:border-accent/30 cursor-pointer"
                     onClick={() => setActiveProject(project)}
                   >
                         <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
