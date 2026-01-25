@@ -10,9 +10,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   // Optimized for Local SEO in Tangier
-  title: "Mehdi Bentaleb | Full-Stack Developer Tangier | Laravel & React Expert",
+  title: "Mehdi Bentaleb | Full-Stack Developer | Laravel Backend Specialist",
   description: "Full-Stack Web Developer based in Tangier, Morocco. Specialized in Laravel, PHP, and React solutions for businesses.",
-  keywords: ["Développeur Web Tanger", "Laravel Expert Morocco", "Full Stack Developer", "Mehdi Bentaleb", "Web Development Tangier", "Freelance Developer Morocco"],
+  keywords: [
+    "Junior Laravel Developer", "Solicode Tangier Graduate","Junior Web Developer",
+    "Laravel Expert Morocco", "PHP Developer Tangier", "Full Stack Developer Casablanca",
+    "Backend Developer Rabat", "Laravel SaaS Solutions", "Freelance Laravel Developer",
+    "Développeur Laravel Maroc", "Web Development Morocco", "Mehdi Bentaleb", "Web Developer Tangier", "Full Stack Developer Morocco" 
+  ],
   authors: [{ name: "Mehdi Bentaleb" }],
   verification: {
     google: "mRDjsto03AqqaQ0A_3UJyk8330wcTi2KzblMbi8Lzgs"
