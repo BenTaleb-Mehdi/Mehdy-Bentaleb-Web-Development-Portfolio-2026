@@ -11,12 +11,24 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProjectModal from "@/components/ProjectModal";
 import TechIcon from "@/components/TechIcon";
+import Preloader from "@/components/Preloader";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const { profile, skills, experience, projects } = portfolioData;
   const [activeSection, setActiveSection] = useState("about");
   const [terminalTrigger, setTerminalTrigger] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+        setIsLoading(false);
+    }, 2800); // slightly longer than animation cycle
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +65,10 @@ export default function Home() {
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-4 py-0 font-sans md:px-12 md:py-20 lg:px-16 lg:py-0 relative">
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader key="preloader" />}
+      </AnimatePresence>
+
       <CustomCursor />
       <ParticleBackground />
       <Terminal triggerCommand={terminalTrigger} onCommandComplete={handleCommandComplete} />

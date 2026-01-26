@@ -6,9 +6,10 @@
     "socialLinks": {
       "github": "https://github.com/BenTaleb-Mehdi",
       "linkedin": "https://www.linkedin.com/in/mehdi-bentaleb",
-      "email": "mailto:Mehdibentaleb548@gmail.com",
       "instagram": "https://www.instagram.com/mehdi__bentaleb/"
-    }
+    },
+    "resumeEn": "/resume-en.pdf",
+    "resumeFr": "/resume-fr.pdf"
   },
  "skills": [
     { "name": "Laravel", "icon": "laravel" },
