@@ -45,7 +45,7 @@ export default function ResumeDropdown({ resumeEn, resumeFr, onViewResume }: Res
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-[#1e293b] border border-slate-700 shadow-xl ring-1 ring-black ring-opacity-5 z-50 overflow-hidden"
+            className="absolute left-0 lg:left-auto lg:right-0 mt-2 w-56 origin-top-left lg:origin-top-right rounded-md bg-[#1e293b] border border-slate-700 shadow-xl ring-1 ring-black ring-opacity-5 z-50 overflow-hidden"
           >
             <div className="py-2">
                  {/* English Section */}

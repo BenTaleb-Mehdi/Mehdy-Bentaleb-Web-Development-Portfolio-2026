@@ -32,7 +32,7 @@ export default function Hero({ onTriggerTerminal }: HeroProps) {
               <img 
                  src="/hero-logo.png" 
                  alt="Logo" 
-                 className="h-12 md:h-14 w-auto mb-2 object-contain "
+                 className="h-12 md:h-14 w-auto mb-3  object-contain "
               />
               ehdi
               <span>{profile.name.split(' ').slice(1).join(' ')}</span>
