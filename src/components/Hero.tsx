@@ -3,7 +3,12 @@ import portfolioData from "../../data/portfolio.json";
 import FloatingCard from "./FloatingCard";
 import Magnetic from "./Magnetic";
 import ResumeDropdown from "./ResumeDropdown";
-import ResumeModal from "./ResumeModal";
+
+import dynamic from "next/dynamic";
+
+const ResumeModal = dynamic(() => import("./ResumeModal"), {
+  ssr: false,
+});
 
 interface HeroProps {
     onTriggerTerminal: () => void;
