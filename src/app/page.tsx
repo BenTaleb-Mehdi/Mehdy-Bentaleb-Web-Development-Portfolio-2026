@@ -73,15 +73,15 @@ export default function Home() {
       <ParticleBackground />
       <Terminal triggerCommand={terminalTrigger} onCommandComplete={handleCommandComplete} />
 
-      <div className="lg:flex lg:justify-between lg:gap-4">
+      <div className="lg:flex lg:justify-between lg:gap-4 pt-3">
         {/* Left Column (Sticky Sidebar) */}
-        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-12  lg:overflow-hidden">
-          <div className="space-y-6 lg:space-y-12 w-full max-w-lg mx-auto py-8 lg:py-12"> 
+        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-8 lg:overflow-y-auto scrollbar-none">
+          <div className="space-y-2 lg:space-y-4 w-full max-w-lg mx-auto py-8 lg:py-0"> 
             <Hero onTriggerTerminal={handleHeroTrigger} />
             
             {/* Navigation */}
             <nav className="nav hidden lg:block" aria-label="In-page jump links">
-              <ul className="w-max space-y-5">
+              <ul className="w-max space-y-3">
                 {["About", "Skills", "Experience", "Projects"].map((item) => (
                   <li key={item}>
                     <Magnetic>
@@ -108,18 +108,17 @@ export default function Home() {
           </div>
             
            {/* Social Links - Pushed to bottom */}
-           <ul className="flex items-center gap-5 w-full max-w-lg mx-auto pt-3" aria-label="Social media">
+           <ul className="flex items-center gap-5 w-full max-w-lg mx-auto py-4" aria-label="Social media">
               {Object.entries(profile.socialLinks).map(([key, url]) => (
                   <li key={key}>
                   <Magnetic>
                       <a href={url} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-accent transition-colors block p-2">
                           {key === 'github' && <Github size={24} />}
                           {key === 'linkedin' && <Linkedin size={24} />}
-                          {key === 'twitter' && <Twitter size={24} />}
                           {key === 'instagram' && <Instagram size={24} />}
                           {key === 'email' && <Mail size={24} />}
                           {/* Fallback for other keys */}
-                          {!['github', 'linkedin', 'twitter', 'instagram', 'email'].includes(key) && <LinkIcon size={24} />}
+                          {!['github', 'linkedin', 'instagram', 'email'].includes(key) && <LinkIcon size={24} />}
                       </a>
                   </Magnetic>
                   </li>
@@ -128,7 +127,7 @@ export default function Home() {
         </header>
 
         {/* Right Column (Scrollable Content) - 60% Width */}
-        <main className="pt-12 lg:w-3/5 lg:py-24 space-y-12"> {/* Increased gap between sections */}
+        <main className="pt-12 lg:w-3/5 lg:py-10 space-y-12"> {/* Increased gap between sections */}
           
           {/* About Section */}
           <section id="about" className="scroll-mt-16 lg:scroll-mt-24">

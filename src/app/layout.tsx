@@ -73,8 +73,8 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         {/* JSON-LD is placed here for better SEO crawling */}
         <script
           type="application/ld+json"
