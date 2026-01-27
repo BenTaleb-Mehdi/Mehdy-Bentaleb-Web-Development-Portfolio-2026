@@ -29,12 +29,7 @@ export default function Hero({ onTriggerTerminal }: HeroProps) {
           <div className="space-y-4 relative z-10">
             <h2 className="text-accent font-mono text-lg">Hi, my name is</h2>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-200 tracking-tight flex items-center gap-2">
-              <img 
-                 src="/hero-logo.png" 
-                 alt="Logo" 
-                 className="h-12 md:h-14 w-auto mb-3  object-contain "
-              />
-              ehdi
+              Mehdi
               <span>{profile.name.split(' ').slice(1).join(' ')}</span>
             </h1>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-400">
