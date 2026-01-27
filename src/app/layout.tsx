@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     google: "mRDjsto03AqqaQ0A_3UJyk8330wcTi2KzblMbi8Lzgs"
   },
   // URL matching your actual Vercel deployment
-  metadataBase: new URL("https://mehdy-bentaleb-web-development-port.vercel.app"),
+  metadataBase: new URL("https://mehdi-bentaleb.vercel.app/"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mehdy-bentaleb-web-development-port.vercel.app",
+    url: "https://mehdi-bentaleb.vercel.app/",
     title: "Mehdi Bentaleb - Full-Stack Developer Tangier",
     description: "Expert Laravel, PHP & React. Building high-performance web applications in Tangier.",
     siteName: "Mehdi Bentaleb Portfolio",
@@ -52,7 +52,7 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Mehdi Bentaleb",
     "jobTitle": "Full Stack Web Developer",
-    "url": "https://mehdy-bentaleb-web-development-port.vercel.app",
+    "url": "https://mehdi-bentaleb.vercel.app/",
     "telephone": "+212 630 829 654",
     "email": "Mehdibentaleb548@gmail.com",
     "address": {
