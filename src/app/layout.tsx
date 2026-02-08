@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     "Junior Laravel Developer", "Solicode Tangier Graduate","Junior Web Developer",
     "Laravel Expert Morocco", "PHP Developer Tangier", "Full Stack Developer Casablanca",
     "Backend Developer Rabat", "Laravel SaaS Solutions", "Freelance Laravel Developer",
-    "Développeur Laravel Maroc", "Web Development Morocco", "Mehdi Bentaleb", "Web Developer Tangier", "Full Stack Developer Morocco" 
+    "Développeur Laravel Maroc", "Web Development Morocco", "Mehdi Bentaleb", "Web Developer Tangier", "Full Stack Developer Morocco" ,
+    "Développeur Full Stack Tanger", "Développeur Web Maroc", "Recrutement Développeur Laravel".
   ],
   authors: [{ name: "Mehdi Bentaleb" }],
   verification: {
