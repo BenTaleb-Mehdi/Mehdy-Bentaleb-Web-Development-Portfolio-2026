@@ -1,12 +1,13 @@
 {
 "profile": {
-    "name": "Mehdi Bentaleb",
-    "role": "Full-Stack Web Developer Laravel",
-    "bio": "Specialized in building robust web applications using the Laravel ecosystem. Based in Tangier, Morocco.",
+"name": "Mehdi Bentaleb",
+    "role": "Full-Stack Laravel Developer",
+    "bio": "Expert en développement Laravel & PHP basé à Tanger. Je construis des applications web sur mesure, robustes et optimisées pour les entreprises au Maroc.",
     "socialLinks": {
       "github": "https://github.com/BenTaleb-Mehdi",
       "linkedin": "https://www.linkedin.com/in/mehdi-bentaleb",
       "instagram": "https://www.instagram.com/mehdi__bentaleb/"
+    }
     },
     "resumeEn": "/resume-en.pdf",
     "resumeFr": "/resume-fr.pdf"
@@ -40,17 +41,17 @@
           ]
         },
         {
-          "company": "Freelance Developer",
-          "role": "Full-Stack Web Developer",
-          "duration": "2025/12 - 2026/01",
-          "location": "Tangier, Morocco",
-          "description": "Providing end-to-end web development services for local businesses and startups in the Tangier region.",
-          "techUsed": ["laravel", "MySQL", "Tailwind CSS", "JavaScript"],
-          "metrics": [
-            "Developed a custom E-commerce platform for a local clothing brand, featuring a dynamic product catalog and order tracking.",
-            "Built responsive, SEO-optimized landing pages to increase brand visibility and customer conversion rates.",
-            "Integrated secure payment gateways and intuitive admin panels for seamless inventory management."
-          ]
+        "company": "Freelance Developer",
+      "role": "Laravel Specialist",
+      "location": "Tangier, Morocco",
+      "description": "Accompagnement des entreprises à Tanger dans leur transformation digitale via des solutions Web robustes sous Laravel.",
+      "metrics": [
+        "Développement de plateformes E-commerce avec gestion de stock dynamique.",
+        "Optimisation du SEO local pour des entreprises basées au Maroc.",
+        "Intégration de solutions de paiement et d'administration personnalisées."
+      ]
+        "techUsed": ["laravel", "MySQL", "Tailwind CSS", "JavaScript"],
+         
         }
   ],
 "education": [
@@ -72,7 +73,7 @@
   "projects": [
   {
     "title": "Market Store Management",
-    "description": "A professional retail management system designed for inventory control, sales tracking, and automated reporting for local businesses.",
+    "description": "A robust Retail Inventory Management System built with Laravel. It helps local businesses in Tangier automate sales tracking, manage stock levels in real-time, and generate financial reports. Designed to streamline operations for Moroccan SMEs.",
     "techStack": { 
       "Backend": ["Laravel", "PHP", "MySQL"], 
       "Frontend": ["Tailwind CSS", "JavaScript"] 
@@ -83,7 +84,7 @@
   },
 {
   "title": "Drive-Rent Management System",
-  "description": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
+  "description": "Advanced Car Rental Management Software developed with Laravel and MySQL. Features automated booking workflows, real-time fleet availability tracking, and a secure reservation portal. Tailored for car rental agencies in Morocco looking for digital transformation.",
   "techStack": { 
     "Backend": ["Laravel", "PHP", "MySQL"], 
     "Frontend": ["Tailwind CSS", "Blade", "JavaScript"] 
@@ -94,7 +95,7 @@
 },
    {
     "title": "GymFitness Frontend",
-    "description": "A high-performance, responsive landing page for a fitness club, featuring smooth scroll animations, a dynamic BMI calculator, and pricing plan layouts.",
+    "description": "A high-performance Responsive Landing Page for fitness centers. Built with modern CSS (Flexbox/Grid) and optimized for Core Web Vitals. Includes dynamic features like a BMI calculator, focusing on fast loading speeds and conversion-driven UI for local gyms.",
     "techStack": { 
       "Core": ["HTML5", "CSS3"], 
       "Logic": ["JavaScript (ES6)"],
@@ -108,7 +109,7 @@
   ],
   "terminal": {
     "commands": {
-      "about": "Full-Stack Web Developer aiming to build robust ecosystem-driven applications. Experienced with Laravel, React, and Modern UI/UX.",
+      "about": "Full-Stack Web Developer aiming to build robust ecosystem-driven applications. Experienced with Laravel, and Modern UI/UX.",
       "skills": "Core: Laravel, PHP, MySQL, React, Next.js, Tailwind CSS. Tools: Git, VS Code, Composer.",
       "contact": "Email: Mehdibentaleb548@gmail.com | LinkedIn: https://www.linkedin.com/in/mehdi-bentaleb | GitHub: https://github.com/BenTaleb-Mehdi"
     }
