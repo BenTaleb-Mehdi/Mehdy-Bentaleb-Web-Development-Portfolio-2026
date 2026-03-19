@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mehdi-bentaleb.vercel.app/sitemap.xml

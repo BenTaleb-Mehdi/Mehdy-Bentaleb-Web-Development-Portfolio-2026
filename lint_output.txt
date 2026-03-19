@@ -1,1 +1,0 @@
-Invalid project directory provided, no such directory: C:\portfolio 2026 pro\lint

@@ -1,0 +1,125 @@
+{
+  "profile": {
+    "name": "Mehdi Bentaleb",
+    "role": "Full-Stack Web Developer Laravel",
+    "email": "Mehdibentaleb548@gmail.com",
+    "location": "Tangier, Morocco",
+    "experience": 3,
+    "availability": "Available for Projects / Full-time",
+    "tagline": "BUILDING ROBUST & SCALABLE WEB ECOSYSTEMS.",
+    "aboutText": "Specialized in building robust web applications using the Laravel ecosystem. I focus on backend architecture, MVC patterns, and Database optimization. My goal is to bridge the gap between complex logic and seamless user experiences, ensuring high performance and clean code standards.",
+    "profileImg": "/images/profile.png",
+    "resumeEn": "/resume-en.pdf",
+    "resumeFr": "/resume-fr.pdf"
+  },
+  "navigation": {
+    "menuItems": [
+      { "label": "Home", "ariaLabel": "Go to home section", "link": "#home" },
+      { "label": "About", "ariaLabel": "Go to about section", "link": "#about" },
+      { "label": "Projects", "ariaLabel": "Go to projects section", "link": "#projects" },
+      { "label": "Skills", "ariaLabel": "Go to skills section", "link": "#stack" },
+      { "label": "Experience", "ariaLabel": "Go to experience section", "link": "#experience" },
+      { "label": "Education", "ariaLabel": "Go to education section", "link": "#education" },
+      { "label": "Contact", "ariaLabel": "Go to contact section", "link": "#contact" }
+    ],
+    "socialItems": [
+      { "label": "GitHub", "link": "https://github.com/BenTaleb-Mehdi", "icon": "Github" },
+      { "label": "LinkedIn", "link": "https://www.linkedin.com/in/mehdi-bentaleb", "icon": "Linkedin" },
+      { "label": "Instagram", "link": "https://www.instagram.com/mehdi__bentaleb/", "icon": "Instagram" }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Market Store Management",
+      "type": "Retail System",
+      "year": "2025",
+      "description": "Professional retail management system for inventory control and automated reporting.",
+      "fullDescription": "A professional retail management system designed for inventory control, sales tracking, and automated reporting for local businesses. Built with a focus on performance and data integrity.",
+      "bgClass": "bg-indigo-600/20",
+      "colSpan": "md:col-span-8",
+      "image": "/images/market-store.png",
+      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/BenTaleb-Mehdi/Market-Store",
+      "videoUrl": "https://player.vimeo.com/video/1157974970"
+    },
+    {
+      "title": "Drive-Rent System",
+      "type": "Car Rental Platform",
+      "year": "2026",
+      "description": "Comprehensive platform for vehicle tracking and automated booking.",
+      "fullDescription": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
+      "bgClass": "bg-emerald-600/20",
+      "colSpan": "md:col-span-4",
+      "image": "/images/location-cars.png",
+      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Blade"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/BenTaleb-Mehdi/project-location-cars",
+      "videoUrl": "https://player.vimeo.com/video/1157972833"
+    },
+    {
+      "title": "GymFitness Frontend",
+      "type": "Landing Page",
+      "year": "2026",
+      "description": "High-performance landing page with smooth animations and BMI calculator.",
+      "fullDescription": "A high-performance, responsive landing page for a fitness club, featuring smooth scroll animations, a dynamic BMI calculator, and pricing plan layouts.",
+      "bgClass": "bg-rose-600/20",
+      "colSpan": "md:col-span-8",
+      "image": "/images/landingpage-gym.png",
+      "stack": ["HTML5", "CSS3", "JavaScript", "Responsive UI"],
+      "demoUrl": "http://gymfitness-alpha.vercel.app/",
+      "codeUrl": "https://github.com/BenTaleb-Mehdi/GYMFITNESS"
+    }
+  ],
+  "education": [
+    {
+      "school": "Miage Tangier",
+      "degree": "Technician specializing in IT development",
+      "duration": "2022 - 2025",
+      "link": "https://groupemiage.net",
+      "description": "Deep dive into Backend architecture, MVC patterns, and Database optimization."
+    },
+    {
+      "school": "Solicode Tangier",
+      "degree": "Full-Stack Web Development Path",
+      "duration": "2025 - present",
+      "link": "https://solicode.co",
+      "description": "Advanced training in modern web frameworks and collaborative coding environments."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Full-Stack Web Developer",
+      "company": "Freelance Developer",
+      "period": "2025/12 — PRESENT",
+      "description": "Developing custom E-commerce platforms and SEO-optimized landing pages for local businesses using Laravel and Tailwind CSS."
+    },
+    {
+      "role": "Full-Stack Web Developer (PFE)",
+      "company": "Miage Tangier",
+      "period": "2025/04 — 2025/06",
+      "description": "Designed and developed an internal School Management System to automate student administration and internship tracking."
+    }
+  ],
+  "faqs": [
+    {
+      "num": "01.",
+      "question": "What is your core tech stack?",
+      "answer": "My expertise lies in the Laravel ecosystem, including PHP, MySQL, and Tailwind CSS, while also working with React and Next.js for modern frontends."
+    },
+    {
+      "num": "02.",
+      "question": "Are you open to freelance projects?",
+      "answer": "Yes, I am actively providing web development services for startups and local businesses in the Tangier region."
+    }
+  ],
+  "stack": [
+    { "title": "Laravel", "href": "https://laravel.com", "icon": "SiLaravel" },
+    { "title": "PHP", "href": "https://www.php.net", "icon": "SiPhp" },
+    { "title": "MySQL", "href": "https://www.mysql.com", "icon": "SiMysql" },
+    { "title": "Tailwind CSS", "href": "https://tailwindcss.com", "icon": "SiTailwindcss" },
+    { "title": "React", "href": "https://react.dev", "icon": "SiReact" },
+    { "title": "Next.js", "href": "https://nextjs.org", "icon": "SiNextdotjs" },
+    { "title": "Git", "href": "https://git-scm.com", "icon": "SiGit" }
+  ]
+}
