@@ -91,7 +91,7 @@ export function Contact() {
                 </div>
 
                 <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-zinc-800 bg-zinc-800">
-                  <img src="images/profile.png" alt="Devraj Khatri" className="w-full h-full object-cover" />
+                  <img src={portfolioData.profile.profileImg} alt={portfolioData.profile.name} className="w-full h-full object-cover" />
                 </div>
 
                 <p className="text-zinc-400 leading-relaxed mb-8 font-light italic">
