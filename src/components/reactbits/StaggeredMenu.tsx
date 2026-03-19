@@ -28,6 +28,7 @@ export interface StaggeredMenuProps {
   closeOnClickAway?: boolean;
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
+  logoText?: string;
 }
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
@@ -46,7 +47,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   isFixed = false,
   closeOnClickAway = true,
   onMenuOpen,
-  onMenuClose
+  onMenuClose,
+  logoText = "DC"
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
@@ -415,7 +417,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 draggable={false}
               />
             ) : (
-                <div className="text-xl font-display font-bold text-white tracking-widest sm-logo-text">DC</div>
+                <div className="text-xl font-display font-bold text-white tracking-widest sm-logo-text">{logoText}</div>
             )}
           </div>
 

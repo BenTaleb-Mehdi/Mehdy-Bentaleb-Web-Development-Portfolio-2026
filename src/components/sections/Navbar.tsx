@@ -20,7 +20,7 @@ export function Navbar() {
       displaySocials={true}
       displayItemNumbering={true}
       isFixed={true}
-
+      logoText={portfolioData.profile.logoText}
     />
 
   );

@@ -10,7 +10,8 @@
     "aboutText": "Specialized in building robust web applications using the Laravel ecosystem. I focus on backend architecture, MVC patterns, and Database optimization. My goal is to bridge the gap between complex logic and seamless user experiences, ensuring high performance and clean code standards.",
     "profileImg": "/images/profile.png",
     "resumeEn": "/resume-en.pdf",
-    "resumeFr": "/resume-fr.pdf"
+    "resumeFr": "/resume-fr.pdf",
+    "logoText": "MB"
   },
   "navigation": {
     "menuItems": [
@@ -38,6 +39,11 @@
       "bgClass": "bg-indigo-600/20",
       "colSpan": "md:col-span-8",
       "image": "/images/market-store.png",
+      "images": [
+        "/images/market-store.png",
+        "/images/market-store2.png",
+        "/images/market-store3.png"
+      ],
       "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
       "demoUrl": "#",
       "codeUrl": "https://github.com/BenTaleb-Mehdi/Market-Store",
@@ -52,6 +58,12 @@
       "bgClass": "bg-emerald-600/20",
       "colSpan": "md:col-span-4",
       "image": "/images/location-cars.png",
+      "images": [
+        "/images/location-cars.png",
+        "/images/location-cars2.png",
+        "/images/location-cars3.png",
+        "/images/location-cars4.png"
+      ],
       "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Blade"],
       "demoUrl": "#",
       "codeUrl": "https://github.com/BenTaleb-Mehdi/project-location-cars",
@@ -66,6 +78,9 @@
       "bgClass": "bg-rose-600/20",
       "colSpan": "md:col-span-8",
       "image": "/images/landingpage-gym.png",
+      "images": [
+        "/images/landingpage-gym.png"
+      ],
       "stack": ["HTML5", "CSS3", "JavaScript", "Responsive UI"],
       "demoUrl": "http://gymfitness-alpha.vercel.app/",
       "codeUrl": "https://github.com/BenTaleb-Mehdi/GYMFITNESS"

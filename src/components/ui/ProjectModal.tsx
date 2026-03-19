@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Play, Calendar, Cpu } from 'lucide-react';
-import { useEffect } from 'react';
+import { X, ExternalLink, Github, Play, Calendar, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -12,6 +12,7 @@ interface ProjectModalProps {
     type: string;
     year: string;
     image?: string;
+    images?: string[];
     bgClass: string;
     stack?: string[];
     demoUrl?: string;
@@ -21,6 +22,13 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Reset index when modal opens or project changes
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project, isOpen]);
+
   // Prevent scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -34,6 +42,19 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
   }, [isOpen]);
 
   if (!project) return null;
+
+  const images = project.images || (project.image ? [project.image] : []);
+  const hasMultipleImages = images.length > 1;
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
     <AnimatePresence>
@@ -65,28 +86,73 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             </button>
 
             {/* Left: Image/Video Preview */}
-            <div className="md:w-1/2 relative bg-zinc-900 overflow-hidden min-h-[300px] md:min-h-full">
+            <div className="md:w-1/2 relative bg-zinc-900 overflow-hidden min-h-[300px] md:min-h-full flex items-center justify-center">
               <div className={`absolute inset-0 ${project.bgClass} opacity-40`} />
-              {project.image ? (
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover relative z-10" />
-              ) : (
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-700 p-12 text-center">
-                   <div className="w-20 h-20 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4">
-                     <Play size={32} className="opacity-40" />
-                   </div>
-                   <p className="text-xs font-mono uppercase tracking-widest opacity-40">Project Preview Placeholder</p>
-                </div>
+              
+              <AnimatePresence mode="wait">
+                {images.length > 0 ? (
+                  <motion.img
+                    key={currentImageIndex}
+                    src={images[currentImageIndex]}
+                    alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full object-cover relative z-10"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-700 p-12 text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4">
+                      <Play size={32} className="opacity-40" />
+                    </div>
+                    <p className="text-xs font-mono uppercase tracking-widest opacity-40">Project Preview Placeholder</p>
+                  </div>
+                )}
+              </AnimatePresence>
+
+              {/* Carousel Controls */}
+              {hasMultipleImages && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 z-20 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-all border border-white/10"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 z-20 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-all border border-white/10"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                  
+                  {/* Indicators */}
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                    {images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          idx === currentImageIndex 
+                            ? "bg-brand-green w-6" 
+                            : "bg-white/30 hover:bg-white/50"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
               )}
               
               {project.videoUrl && (
-                <div className="absolute bottom-8 left-8 z-20">
+                <div className="absolute bottom-16 left-8 z-20">
                     <a 
                       href={project.videoUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-6 py-3 bg-brand-green text-black font-bold rounded-full hover:scale-105 transition-transform"
+                      className="flex items-center gap-3 px-6 py-3 bg-brand-green text-black font-bold rounded-full hover:scale-105 transition-transform text-sm"
                     >
-                        <Play size={18} fill="currentColor" />
+                        <Play size={16} fill="currentColor" />
                         WATCH VIDEO DEMO
                     </a>
                 </div>
