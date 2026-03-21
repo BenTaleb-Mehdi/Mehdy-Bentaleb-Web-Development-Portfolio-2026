@@ -96,7 +96,7 @@ function App() {
       </main>
       
       <footer className="py-12 text-center text-sm font-medium text-zinc-500 border-t border-zinc-900">
-        &copy; {new Date().getFullYear()} Reactbit Style Portfolio.
+        &copy; {new Date().getFullYear()} Mehdy Bentaleb. All rights reserved.
       </footer>
     </div>
     </ClickSpark>
