@@ -31,6 +31,60 @@
   },
   "projects": [
     {
+  "title": "StockMaster-Pro",
+  "type": "Inventory Management System",
+  "year": "2026",
+  "description": "Comprehensive retail inventory and client management solution.",
+  "fullDescription": "A robust professional management system designed from scratch to handle stock levels, client relationships, and supplier workflows with real-time data persistence.",
+  "bgClass": "bg-emerald-600/20",
+  "colSpan": "md:col-span-8",
+  "image": "/images/stock1.png",
+  "images": [
+    "/images/stock2.png",
+    "/images/stock3.png",
+    "/images/stock4.png",
+    "/images/stock5.png"
+  ],
+  "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
+  "demoUrl": "https://stockmaster-pro.vercel.app/",
+  "codeUrl": "https://github.com/BenTaleb-Mehdi/StockMaster-Pro"
+},
+
+ 
+{
+  "title": "Kaftan Website 2026",
+  "type": "E-commerce / Boutique Showcase",
+  "year": "2026",
+  "description": "Elegant luxury fashion platform dedicated to traditional Moroccan Kaftans.",
+  "fullDescription": "A high-end e-commerce showcase designed for Moroccan luxury fashion, featuring refined product catalogs, responsive design, and a minimalist aesthetic tailored for 2026 trends.",
+  "bgClass": "bg-amber-600/20",
+  "colSpan": "md:col-span-4",
+  "image": "/images/kaftan-website1.png",
+  "images": [
+    "/images/kaftan-website1.png"
+  ],
+  "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
+  "demoUrl": "#",
+  "codeUrl": "https://github.com/BenTaleb-Mehdi/website-kaftan-2026"
+},
+   {
+      "title": "GymFitness Frontend",
+      "type": "Landing Page",
+      "year": "2026",
+      "description": "High-performance landing page with smooth animations and BMI calculator.",
+      "fullDescription": "A high-performance, responsive landing page for a fitness club, featuring smooth scroll animations, a dynamic BMI calculator, and pricing plan layouts.",
+      "bgClass": "bg-rose-600/20",
+      "colSpan": "md:col-span-4",
+      "image": "/images/landingpage-gym.png",
+      "images": [
+        "/images/landingpage-gym.png"
+      ],
+      "stack": ["HTML5", "CSS3", "JavaScript", "Responsive UI"],
+      "demoUrl": "http://gymfitness-alpha.vercel.app/",
+      "codeUrl": "https://github.com/BenTaleb-Mehdi/GYMFITNESS"
+    },
+
+    {
       "title": "Market Store Management",
       "type": "Retail System",
       "year": "2025",
@@ -56,7 +110,7 @@
       "description": "Comprehensive platform for vehicle tracking and automated booking.",
       "fullDescription": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
       "bgClass": "bg-emerald-600/20",
-      "colSpan": "md:col-span-4",
+      "colSpan": "md:col-span-8",
       "image": "/images/location-cars.png",
       "images": [
         "/images/location-cars.png",
@@ -69,22 +123,29 @@
       "codeUrl": "https://github.com/BenTaleb-Mehdi/project-location-cars",
       "videoUrl": "https://player.vimeo.com/video/1157972833"
     },
-    {
-      "title": "GymFitness Frontend",
-      "type": "Landing Page",
-      "year": "2026",
-      "description": "High-performance landing page with smooth animations and BMI calculator.",
-      "fullDescription": "A high-performance, responsive landing page for a fitness club, featuring smooth scroll animations, a dynamic BMI calculator, and pricing plan layouts.",
-      "bgClass": "bg-rose-600/20",
-      "colSpan": "md:col-span-8",
-      "image": "/images/landingpage-gym.png",
-      "images": [
-        "/images/landingpage-gym.png"
-      ],
-      "stack": ["HTML5", "CSS3", "JavaScript", "Responsive UI"],
-      "demoUrl": "http://gymfitness-alpha.vercel.app/",
-      "codeUrl": "https://github.com/BenTaleb-Mehdi/GYMFITNESS"
-    }
+{
+  "title": "Gym Fitness ",
+  "type": "Interactive Landing Page",
+  "year": "2026",
+  "description": "High-end immersive landing page featuring 3D visuals and smooth interactions.",
+  "fullDescription": "A modern, high-performance landing page for fitness branding, utilizing Three.js for immersive 3D elements, Tailwind CSS for minimalist styling, and custom JavaScript for fluid scroll animations.",
+  "bgClass": "bg-rose-600/20",
+  "colSpan": "md:col-span-4",
+  "image": "/images/fitness1.png",
+  "images": [
+    "/images/fitness1.png",
+    "/images/fitness2.png",
+    "/images/fitness3.png",
+    "/images/fitness4.png",
+    "/images/fitness5.png",
+    "/images/fitness6.png",
+    "/images/fitness7.png"
+  ],
+  "stack": ["Three.js", "Tailwind CSS", "JavaScript", "HTML5"],
+  "demoUrl": "https://oxygengym.vercel.app/",
+  "codeUrl": "https://github.com/BenTaleb-Mehdi/website-Gym-"
+}
+
   ],
   "education": [
     {
