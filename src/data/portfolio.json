@@ -40,6 +40,7 @@
   "colSpan": "md:col-span-8",
   "image": "/images/stock1.png",
   "images": [
+    "/images/stock1.png",
     "/images/stock2.png",
     "/images/stock3.png",
     "/images/stock4.png",
@@ -64,10 +65,35 @@
     "/images/kaftan-website1.png"
   ],
   "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
-  "demoUrl": "#",
+  "demoUrl": "https://bouananicouture.com/",
   "codeUrl": "https://github.com/BenTaleb-Mehdi/website-kaftan-2026"
 },
-   {
+ 
+
+  
+    {
+  "title": "SupplementStack",
+  "type": "E-commerce / Supplement Catalog",
+  "year": "2026",
+  "description": "Professional nutrition and supplement platform for fitness enthusiasts.",
+  "fullDescription": "A specialized e-commerce solution for supplement tracking and sales, featuring categorized product catalogs, nutritional data management, and a clean, high-performance interface.",
+  "bgClass": "bg-indigo-600/20",
+  "colSpan": "md:col-span-10",
+  "image": "/images/supplement1.png",
+  "images": [
+    "/images/supplement1.png",
+    "/images/supplement2.png",
+    "/images/supplement3.png",
+    "/images/supplement4.png",
+    "/images/supplement5.png",
+    "/images/supplement6.png",
+    "/images/supplement7.png"
+  ],
+  "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
+  "demoUrl": "#",
+  "codeUrl": "https://github.com/BenTaleb-Mehdi/SupplementStack"
+},
+  {
       "title": "GymFitness Frontend",
       "type": "Landing Page",
       "year": "2026",
@@ -83,54 +109,14 @@
       "demoUrl": "http://gymfitness-alpha.vercel.app/",
       "codeUrl": "https://github.com/BenTaleb-Mehdi/GYMFITNESS"
     },
-
     {
-      "title": "Market Store Management",
-      "type": "Retail System",
-      "year": "2025",
-      "description": "Professional retail management system for inventory control and automated reporting.",
-      "fullDescription": "A professional retail management system designed for inventory control, sales tracking, and automated reporting for local businesses. Built with a focus on performance and data integrity.",
-      "bgClass": "bg-indigo-600/20",
-      "colSpan": "md:col-span-8",
-      "image": "/images/market-store.png",
-      "images": [
-        "/images/market-store.png",
-        "/images/market-store2.png",
-        "/images/market-store3.png"
-      ],
-      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
-      "demoUrl": "#",
-      "codeUrl": "https://github.com/BenTaleb-Mehdi/Market-Store",
-      "videoUrl": "https://player.vimeo.com/video/1157974970"
-    },
-    {
-      "title": "Drive-Rent System",
-      "type": "Car Rental Platform",
-      "year": "2026",
-      "description": "Comprehensive platform for vehicle tracking and automated booking.",
-      "fullDescription": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
-      "bgClass": "bg-emerald-600/20",
-      "colSpan": "md:col-span-8",
-      "image": "/images/location-cars.png",
-      "images": [
-        "/images/location-cars.png",
-        "/images/location-cars2.png",
-        "/images/location-cars3.png",
-        "/images/location-cars4.png"
-      ],
-      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Blade"],
-      "demoUrl": "#",
-      "codeUrl": "https://github.com/BenTaleb-Mehdi/project-location-cars",
-      "videoUrl": "https://player.vimeo.com/video/1157972833"
-    },
-{
   "title": "Gym Fitness ",
   "type": "Interactive Landing Page",
   "year": "2026",
   "description": "High-end immersive landing page featuring 3D visuals and smooth interactions.",
   "fullDescription": "A modern, high-performance landing page for fitness branding, utilizing Three.js for immersive 3D elements, Tailwind CSS for minimalist styling, and custom JavaScript for fluid scroll animations.",
   "bgClass": "bg-rose-600/20",
-  "colSpan": "md:col-span-4",
+  "colSpan": "md:col-span-8",
   "image": "/images/fitness1.png",
   "images": [
     "/images/fitness1.png",
@@ -144,7 +130,47 @@
   "stack": ["Three.js", "Tailwind CSS", "JavaScript", "HTML5"],
   "demoUrl": "https://oxygengym.vercel.app/",
   "codeUrl": "https://github.com/BenTaleb-Mehdi/website-Gym-"
-}
+},
+  {
+      "title": "Market Store Management",
+      "type": "Retail System",
+      "year": "2025",
+      "description": "Professional retail management system for inventory control and automated reporting.",
+      "fullDescription": "A professional retail management system designed for inventory control, sales tracking, and automated reporting for local businesses. Built with a focus on performance and data integrity.",
+      "bgClass": "bg-indigo-600/20",
+      "colSpan": "md:col-span-10",
+      "image": "/images/market-store.png",
+      "images": [
+        "/images/market-store.png",
+        "/images/market-store2.png",
+        "/images/market-store3.png"
+      ],
+      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "JavaScript"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/BenTaleb-Mehdi/Market-Store",
+      "videoUrl": "https://player.vimeo.com/video/1157974970"
+    },
+
+    {
+      "title": "Drive-Rent System",
+      "type": "Car Rental Platform",
+      "year": "2026",
+      "description": "Comprehensive platform for vehicle tracking and automated booking.",
+      "fullDescription": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
+      "bgClass": "bg-emerald-600/20",
+      "colSpan": "md:col-span-10",
+      "image": "/images/location-cars.png",
+      "images": [
+        "/images/location-cars.png",
+        "/images/location-cars2.png",
+        "/images/location-cars3.png",
+        "/images/location-cars4.png"
+      ],
+      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Blade"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/BenTaleb-Mehdi/project-location-cars",
+      "videoUrl": "https://player.vimeo.com/video/1157972833"
+    }
 
   ],
   "education": [
