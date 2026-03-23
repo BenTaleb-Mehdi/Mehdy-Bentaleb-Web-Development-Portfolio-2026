@@ -1,13 +1,13 @@
 const portfolioData = {
   "profile": {
     "name": "Mehdi Bentaleb",
-    "role": "Full-Stack Web Developer Laravel",
+    "role": "Junior Full-Stack Web Developer",
     "email": "Mehdibentaleb548@gmail.com",
     "location": "Tangier, Morocco",
-    "experience": 3,
+    "experience": 1,
     "availability": "Available for Projects / Full-time",
-    "tagline": "BUILDING ROBUST & SCALABLE WEB ECOSYSTEMS.",
-    "aboutText": "Specialized in building robust web applications using the Laravel ecosystem. I focus on backend architecture, MVC patterns, and Database optimization. My goal is to bridge the gap between complex logic and seamless user experiences, ensuring high performance and clean code standards."
+    "tagline": "BUILDING ROBUST & SCALABLE WEB ECOSYSTEMS FROM TANGIER.",
+    "aboutText": "Junior Full-Stack Web Developer based in Tangier, Morocco, specializing in the Laravel ecosystem and modern JavaScript frameworks. I focus on building high-performance, SEO-optimized web applications with a technical 'Junior Pro' mindset. I also specialize in building AI Agents for 'Vibe Coding' workflows. My goal is to bridge the gap between complex backend logic and seamless user experiences, ensuring high performance and clean code standards."
   },
   "stack": [
     { "title": "Laravel" },
@@ -28,8 +28,10 @@ const portfolioData = {
     { "title": "Drive-Rent System", "type": "Car Rental Platform", "description": "Comprehensive platform for vehicle tracking and automated booking." }
   ],
   "education": [
+    { "school": "Allal Fassi High School, Tangier", "degree": "Baccalaureate in Life and Earth Sciences (SVT)", "duration": "2021 - 2022" },
+    { "school": "American Language Center (ALC) Tangier", "degree": "English Language Proficiency", "duration": "01/2022 - 09/2022" },
     { "school": "Miage Tangier", "degree": "Technician specializing in IT development", "duration": "2022 - 2025" },
-    { "school": "Solicode Tangier", "degree": "Full-Stack Web Development Path", "duration": "2025 - present" }
+    { "school": "Solicode Tangier", "degree": "Full-Stack Web Development Path", "duration": "2025 - present" },
   ],
   "experience": [
     { "role": "Full-Stack Web Developer", "company": "Freelance Developer", "period": "2025/12 — PRESENT" },

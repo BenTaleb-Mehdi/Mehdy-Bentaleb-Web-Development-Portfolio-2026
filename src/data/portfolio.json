@@ -1,13 +1,13 @@
 {
   "profile": {
     "name": "Mehdi Bentaleb",
-    "role": "Full-Stack Web Developer Laravel",
+    "role": "Junior Full-Stack Web Developer",
     "email": "Mehdibentaleb548@gmail.com",
     "location": "Tangier, Morocco",
-    "experience": 3,
+    "experience": 1,
     "availability": "Available for Projects / Full-time",
-    "tagline": "BUILDING ROBUST & SCALABLE WEB ECOSYSTEMS.",
-    "aboutText": "Specialized in building robust web applications using the Laravel ecosystem. I focus on backend architecture, MVC patterns, and Database optimization. My goal is to bridge the gap between complex logic and seamless user experiences, ensuring high performance and clean code standards.",
+    "tagline": "BUILDING ROBUST & SCALABLE WEB ECOSYSTEMS",
+    "aboutText": "Junior Full-Stack Web Developer based in Tangier, Morocco, specializing in the Laravel ecosystem and modern JavaScript frameworks. I focus on building high-performance, SEO-optimized web applications with a technical 'Junior Pro' mindset. I also specialize in building AI Agents for 'Vibe Coding' workflows. My goal is to bridge the gap between complex backend logic and seamless user experiences, ensuring high performance and clean code standards.",
     "profileImg": "/images/profile.png",
     "resumeEn": "/resume-en.pdf",
     "resumeFr": "/resume-fr.pdf",
@@ -174,6 +174,19 @@
 
   ],
   "education": [
+     {
+      "school": "Allal Fassi High School, Tangier",
+      "degree": "Baccalaureate in Life and Earth Sciences (SVT)",
+      "duration": "2021 - 2022",
+      "description": "The Baccalaureate in Life and Earth Sciences (SVT) is a major scientific field focused on biology, geology and the environment."
+    },
+     {
+      "school": "American Language Center (ALC) Tangier",
+      "degree": "English Language Proficiency",
+      "duration": "01/2022 - 09/2022",
+      "link": "https://alctangier.org/",
+      "description": "Enhanced English communication skills and professional terminology."
+    },
     {
       "school": "Miage Tangier",
       "degree": "Technician specializing in IT development",
@@ -188,6 +201,7 @@
       "link": "https://solicode.co",
       "description": "Advanced training in modern web frameworks and collaborative coding environments."
     }
+   
   ],
   "experience": [
     {
