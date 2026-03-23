@@ -17,12 +17,31 @@ export function Chatbot() {
   ]);
   const [inputValue, setInputValue] = useState('');
   const scrollRef = useRef<HTMLDivElement>(null);
+  const chatRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, isOpen, isTyping]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        chatRef.current &&
+        !chatRef.current.contains(event.target as Node) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
 
   const handleSend = async () => {
     if (!inputValue.trim() || isTyping) return;
@@ -58,22 +77,24 @@ export function Chatbot() {
     <>
       {/* Toggle Button */}
       <motion.button
+        ref={toggleRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 left-8 z-[60] w-14 h-14 bg-white text-black rounded-full flex items-center justify-center border border-zinc-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:scale-110 transition-transform"
+        className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-[60] w-12 h-12 sm:w-14 sm:h-14 bg-white text-black rounded-full flex items-center justify-center border border-zinc-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:scale-110 transition-transform"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        {isOpen ? <X size={20} /> : <MessageSquare size={20} />}
+        {isOpen ? <X size={18} /> : <MessageSquare size={18} />}
       </motion.button>
 
       {/* Chat interface */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95, x: -20 }}
+            ref={chatRef}
+            initial={{ opacity: 0, y: 20, scale: 0.95, x: -10 }}
             animate={{ opacity: 1, y: 0, scale: 1, x: 0 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95, x: -20 }}
-            className="fixed bottom-28 left-8 z-[60] w-[360px] h-[520px] bg-white border border-zinc-200 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col font-sans"
+            exit={{ opacity: 0, y: 20, scale: 0.95, x: -10 }}
+            className="fixed bottom-20 left-4 right-4 sm:right-auto sm:bottom-28 sm:left-8 z-[60] w-auto sm:w-[360px] h-auto max-h-[75vh] sm:h-[520px] bg-white border border-zinc-200 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col font-sans"
           >
             {/* Header */}
             <div className="p-5 bg-white border-b border-zinc-100 flex items-center justify-between">
