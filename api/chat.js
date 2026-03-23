@@ -81,25 +81,30 @@ GUIDELINES:
 `;
 
 const MODELS_TO_TRY = [
-  "gemini-1.5-flash",
-  "gemini-2.0-flash",
+  "gemini-2.5-flash",
+  "gemini-2.5-pro",
+  "gemini-2.0-flash-exp",
   "gemini-pro"
 ];
 
 export default async function handler(req, res) {
+  console.log(`[Chat API] Received ${req.method} request`);
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   const { userMessage, history } = req.body;
-  const API_KEY = process.env.GEMINI_API_KEY;
+  const API_KEY = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+  console.log(`[Chat API] API Key configured: ${!!API_KEY}`);
 
   if (!API_KEY) {
+    console.error(`[Chat API] Missing API Key in process.env`);
     return res.status(500).json({ error: 'Gemini API Key is not configured on the server.' });
   }
 
   for (const modelName of MODELS_TO_TRY) {
     try {
+      console.log(`[Chat API] Trying model: ${modelName}`);
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${API_KEY}`;
       
       const payload = {
@@ -121,19 +126,21 @@ export default async function handler(req, res) {
         const data = await response.json();
         const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text;
         if (aiResponse) {
+          console.log(`[Chat API] Success with ${modelName}`);
           return res.status(200).json({ response: aiResponse });
         }
       }
 
+      console.warn(`[Chat API] ${modelName} failed with status: ${response.status}`);
       if (response.status === 404) {
         continue;
       }
 
       const errorData = await response.json();
-      console.error(`Gemini API Error (${modelName}):`, errorData.error);
+      console.error(`[Chat API] Gemini API Error (${modelName}):`, JSON.stringify(errorData.error, null, 2));
       
     } catch (error) {
-      console.error(`Fetch error for ${modelName}:`, error.message);
+      console.error(`[Chat API] Fetch error for ${modelName}:`, error.message);
     }
   }
 
