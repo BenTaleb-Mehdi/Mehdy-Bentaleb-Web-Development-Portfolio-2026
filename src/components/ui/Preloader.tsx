@@ -53,7 +53,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="mb-8"
             >
-              <div className="w-24 h-24 border border-zinc-800 flex items-center justify-center relative">
+              <div className="w-24 h-24 border border-zinc-900 flex items-center justify-center relative">
                 <div className="absolute inset-0 border border-brand-green/30 animate-pulse" />
                 <span className="text-4xl font-black text-white italic">
                   {portfolioData.profile.logoText}

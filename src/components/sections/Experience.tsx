@@ -7,7 +7,7 @@ const experiences = portfolioData.experience;
 
 export function Experience() {
   return (
-    <section id="experience" className="py-32 border-b border-zinc-900">
+    <section id="experience" className="py-32 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           <div className="lg:col-span-4">
@@ -18,7 +18,7 @@ export function Experience() {
           </div>
           
           <div className="lg:col-span-8">
-            <div className="flex flex-col border-t border-zinc-900">
+            <div className="flex flex-col border-t border-border">
               {experiences.map((exp, idx) => (
                 <motion.div 
                   key={idx}
@@ -26,20 +26,20 @@ export function Experience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group flex flex-col md:flex-row py-10 border-b border-zinc-900 transition-colors duration-500 hover:bg-zinc-900/10 cursor-default"
+                  className="group flex flex-col md:flex-row py-10 border-b border-border transition-colors duration-500 hover:bg-muted/10 cursor-default"
                 >
                   <div className="md:w-1/3 mb-4 md:mb-0">
-                    <span className="text-[0.65rem] font-mono tracking-widest text-zinc-500 uppercase">{exp.period}</span>
-                    <h3 className="text-xl font-medium text-white mt-2 group-hover:text-white transition-colors">
+                    <span className="text-[0.65rem] font-mono tracking-widest text-muted-foreground uppercase">{exp.period}</span>
+                    <h3 className="text-xl font-medium text-foreground mt-2 group-hover:text-foreground transition-colors">
                       {exp.role}
                     </h3>
                   </div>
                   
                   <div className="md:w-2/3 md:pl-12">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="text-sm font-medium text-zinc-300">@{exp.company}</span>
+                      <span className="text-sm font-medium text-muted-foreground">@{exp.company}</span>
                     </div>
-                    <p className="text-zinc-500 font-light leading-relaxed group-hover:text-zinc-400 transition-colors">
+                    <p className="text-muted-foreground font-light leading-relaxed group-hover:text-muted-foreground transition-colors">
                       {exp.description}
                     </p>
                   </div>
@@ -56,7 +56,7 @@ export function Experience() {
               <a 
                 href={(portfolioData.profile as any).resumeEn} 
                 download
-                className="inline-flex items-center text-sm font-medium text-white group"
+                className="inline-flex items-center text-sm font-medium text-foreground group"
               >
                 Download Resume
                 <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

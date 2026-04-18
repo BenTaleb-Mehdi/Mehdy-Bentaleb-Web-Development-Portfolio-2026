@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Bot } from 'lucide-react';
+import { X, Send, Bot } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { getGeminiResponse } from '../../lib/gemini';
 
@@ -9,8 +9,12 @@ interface ChatMessage {
   sender: 'user' | 'bot';
 }
 
-export function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false);
+interface ChatbotProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
+
+export function Chatbot({ isOpen, setIsOpen }: ChatbotProps) {
   const [isTyping, setIsTyping] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     { id: 1, text: "Hi there! I'm Mehdi's portfolio assistant. How can I help you today?", sender: 'bot' }
@@ -75,17 +79,6 @@ export function Chatbot() {
 
   return (
     <>
-      {/* Toggle Button */}
-      <motion.button
-        ref={toggleRef}
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-[60] w-12 h-12 sm:w-14 sm:h-14 bg-white text-black rounded-full flex items-center justify-center border border-zinc-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:scale-110 transition-transform"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        {isOpen ? <X size={18} /> : <MessageSquare size={18} />}
-      </motion.button>
-
       {/* Chat interface */}
       <AnimatePresence>
         {isOpen && (
@@ -112,7 +105,7 @@ export function Chatbot() {
               </div>
               <button 
                 onClick={() => setIsOpen(false)} 
-                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-zinc-50 text-zinc-400 hover:text-zinc-900 transition-all"
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-zinc-50 text-zinc-500 hover:text-zinc-900 transition-all"
               >
                 <X size={16} />
               </button>
@@ -154,7 +147,7 @@ export function Chatbot() {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Ask something..."
-                  className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl py-3.5 pl-5 pr-12 text-[12px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
+                  className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl py-3.5 pl-5 pr-12 text-[12px] text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-900 focus:bg-white transition-all"
                 />
                 <button 
                   onClick={handleSend}
@@ -164,7 +157,7 @@ export function Chatbot() {
                   <Send size={14} />
                 </button>
               </div>
-              <p className="text-[9px] text-center text-zinc-400 mt-3 font-medium tracking-wide">
+              <p className="text-[9px] text-center text-zinc-500 mt-3 font-medium tracking-wide">
                 Powered by Gemini AI • Secure Connection
               </p>
             </div>

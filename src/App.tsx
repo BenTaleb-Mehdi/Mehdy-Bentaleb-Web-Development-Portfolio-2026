@@ -17,9 +17,25 @@ import { Preloader } from './components/ui/Preloader';
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
+import { SpeedDial } from './components/ui/SpeedDial';
+import { ContactModal } from './components/ui/ContactModal';
+import { ScrollToTop } from './components/ui/ScrollToTop';
+import { Bot, Mail, Instagram, Linkedin, Github } from 'lucide-react';
+import portfolioData from './data/portfolio.json';
+import { motion } from 'framer-motion';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const socials = portfolioData.navigation.socialItems;
+  const speedDialActions = [
+    { name: 'Contact', icon: <Mail size={20} />, onClick: () => setIsContactModalOpen(true) },
+    { name: 'GitHub', icon: <Github size={20} />, href: socials.find(s => s.label === 'GitHub')?.link },
+    { name: 'LinkedIn', icon: <Linkedin size={20} />, href: socials.find(s => s.label === 'LinkedIn')?.link },
+    { name: 'Instagram', icon: <Instagram size={20} />, href: socials.find(s => s.label === 'Instagram')?.link }
+  ];
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -57,7 +73,7 @@ function App() {
       sparkRadius={25} 
       duration={400}
     >
-      <div className="bg-black min-h-screen text-white font-sans selection:bg-brand-green selection:text-black">
+      <div className="min-h-screen bg-background text-foreground font-sans selection:bg-brand-green selection:text-brand-dark transition-colors duration-500">
         {isLoading && <Preloader onLoadingComplete={() => setIsLoading(false)} />}
         
         <div style={{ 
@@ -67,7 +83,21 @@ function App() {
           <SplashCursor />
           <CustomCursor />
           <Navbar />
-          <Chatbot />
+          <Chatbot isOpen={isChatbotOpen} setIsOpen={setIsChatbotOpen} />
+          
+          {/* Standalone AI Chatbot Toggle on Left */}
+          <motion.button
+            onClick={() => setIsChatbotOpen(!isChatbotOpen)}
+            className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-[80] w-14 h-14 bg-foreground text-background shadow-xl rounded-full flex items-center justify-center focus:outline-none pointer-events-auto"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Bot size={24} className="stroke-2" />
+          </motion.button>
+          
+          <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+          <SpeedDial actions={speedDialActions} />
+          <ScrollToTop />
         
           {/* 1px border lines container globally applied to sections via their individual border-b styles */}
           <main className="w-full">
@@ -82,17 +112,17 @@ function App() {
               <ScrollVelocity 
                 texts={['Design Driven Development', 'Creative Engineering']} 
                 velocity={100} 
-                className="text-zinc-800 uppercase italic font-black"
+                className="text-muted-foreground uppercase italic font-black"
               />
             </div>
 
             <ProjectGrid />
 
-            <div className="py-20 overflow-hidden text-zinc-900/10">
+            <div className="py-20 overflow-hidden">
               <ScrollVelocity 
                 texts={['Impactful Experiences', 'Pixel Perfect Solutions']} 
                 velocity={-100} 
-                className="text-white/5 uppercase font-black"
+                className="text-foreground/5 uppercase font-black"
               />
             </div>
 
@@ -101,7 +131,7 @@ function App() {
             <Experience />
             <Education />
 
-            <div className="max-w-6xl mx-auto px-6 md:px-12 w-full border-b border-zinc-900">
+            <div className="max-w-6xl mx-auto px-6 md:px-12 w-full border-b border-border">
               <FAQ />
             </div>
 
@@ -110,8 +140,14 @@ function App() {
             </div>
           </main>
           
-          <footer className="py-12 text-center text-sm font-medium text-zinc-500 border-t border-zinc-900">
-            &copy; {new Date().getFullYear()} Mehdy Bentaleb. All rights reserved.
+          <footer className="py-12 text-center text-sm font-medium text-muted-foreground border-t border-border flex flex-col items-center gap-6">
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="px-6 py-3 bg-foreground text-background rounded-full font-medium shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2"
+            >
+              <Mail size={16} /> Open Contact Form
+            </button>
+            <p>&copy; {new Date().getFullYear()} Mehdy Bentaleb. All rights reserved.</p>
           </footer>
         </div>
       </div>

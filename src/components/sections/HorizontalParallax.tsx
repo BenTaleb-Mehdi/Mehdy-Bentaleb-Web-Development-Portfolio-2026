@@ -47,14 +47,14 @@ export function HorizontalParallax() {
   ];
 
   return (
-    <section ref={targetRef} className="relative h-[350vh] bg-black">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden border-t border-zinc-900">
+    <section ref={targetRef} className="relative h-[350vh] bg-background">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden border-t border-border">
         {/* Background Parallax Text */}
         <motion.div 
           style={{ x: backgroundX, opacity }}
           className="absolute inset-0 flex items-center whitespace-nowrap opacity-[0.03] pointer-events-none select-none"
         >
-          <span className="text-[25vw] font-black uppercase tracking-tighter text-white">
+          <span className="text-[25vw] font-black uppercase tracking-tighter text-foreground">
             Experiences in
           </span>
         </motion.div>
@@ -68,30 +68,30 @@ export function HorizontalParallax() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "circOut" }}
-                className="group relative flex h-[500px] w-[320px] md:w-[450px] flex-col justify-between border border-zinc-900 bg-black p-8 md:p-12 transition-all duration-700 hover:border-zinc-700"
+                className="group relative flex h-[500px] w-[320px] md:w-[450px] flex-col justify-between border border-border bg-muted/20 backdrop-blur-md p-8 md:p-12 transition-all duration-700 hover:border-border/60 shadow-lg"
               >
                 {/* 1px Accent Line */}
                 <div className="absolute top-0 left-0 h-[2px] w-0 bg-brand-green group-hover:w-full transition-all duration-700 ease-in-out" />
                 
                 <div className="flex flex-col gap-6">
-                  <span className="font-mono text-[0.6rem] tracking-[0.4em] text-zinc-500 uppercase">
+                  <span className="font-mono text-[0.6rem] tracking-[0.4em] text-muted-foreground uppercase">
                     Phase {card.number}
                   </span>
                   <div className="flex flex-col gap-2">
                     <span className="text-xs font-mono text-brand-green uppercase tracking-wider">{card.category}</span>
-                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-none">
+                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-none">
                       {card.title}
                     </h3>
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-8">
-                  <p className="text-sm md:text-base font-light leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors duration-500">
+                  <p className="text-sm md:text-base font-light leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-500">
                     {card.description}
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="h-[1px] flex-1 bg-zinc-900 group-hover:bg-zinc-800 transition-colors" />
-                    <span className="font-mono text-[0.6rem] text-zinc-600">INT_0{card.id}</span>
+                    <div className="h-[1px] flex-1 bg-border group-hover:bg-muted-foreground/30 transition-colors" />
+                    <span className="font-mono text-[0.6rem] text-muted-foreground/60">INT_0{card.id}</span>
                   </div>
                 </div>
               </motion.div>
