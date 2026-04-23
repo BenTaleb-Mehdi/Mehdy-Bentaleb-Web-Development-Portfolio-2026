@@ -10,7 +10,7 @@ export function About() {
   const { profile } = portfolioData;
   
   return (
-    <section id="about" className="py-24 border-b border-zinc-900">
+    <section id="about" className="py-32 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full text-center lg:text-left">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
@@ -24,7 +24,7 @@ export function About() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border border-zinc-800 bg-zinc-900 mb-8 lg:mb-0"
+              className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border border-border bg-muted mb-8 lg:mb-0"
             >
               <img src={profile.profileImg} alt="Profile" className="w-full h-full object-cover" />
             </motion.div>
@@ -38,7 +38,7 @@ export function About() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <div className="text-xl md:text-2xl text-white font-medium leading-[1.3]">
+              <div className="text-xl md:text-2xl text-foreground font-medium leading-[1.3]">
                 <ScrollReveal
                   baseOpacity={0.15}
                   enableBlur={true}
@@ -48,35 +48,35 @@ export function About() {
                 </ScrollReveal>
               </div>
               
-              <div className="space-y-4 text-zinc-400 leading-relaxed font-light text-base md:text-lg">
+              <div className="space-y-4 text-muted-foreground leading-relaxed font-light text-base md:text-lg">
                 <BlurText
                   text={profile.aboutText.split('. ').slice(1, 3).join('. ') + '.'}
                   delay={15}
                   animateBy="words"
-                  className="text-zinc-400"
+                  className="text-muted-foreground"
                 />
                 <BlurText
                   text={profile.aboutText.split('. ').slice(3).join('. ')}
                   delay={15}
                   animateBy="words"
-                  className="text-zinc-400"
+                  className="text-muted-foreground"
                 />
               </div>
 
-              <div className="pt-8 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-zinc-900 justify-items-center lg:justify-items-start">
+              <div className="pt-8 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-border justify-items-center lg:justify-items-start">
                 <div>
-                  <div className="text-[0.6rem] uppercase tracking-widest text-zinc-500 mb-2">Location</div>
-                  <div className="text-sm font-medium text-white">{profile.location}</div>
+                  <div className="text-[0.6rem] uppercase tracking-widest text-muted-foreground mb-2">Location</div>
+                  <div className="text-sm font-medium text-foreground">{profile.location}</div>
                 </div>
                 <div>
-                  <div className="text-[0.6rem] uppercase tracking-widest text-zinc-500 mb-2">Experience</div>
-                  <div className="text-sm font-medium text-white">
+                  <div className="text-[0.6rem] uppercase tracking-widest text-muted-foreground mb-2">Experience</div>
+                  <div className="text-sm font-medium text-foreground">
                     <CountUp to={profile.experience} duration={1.5} />+ Years
                   </div>
                 </div>
                 <div>
-                  <div className="text-[0.6rem] uppercase tracking-widest text-zinc-500 mb-2">Availability</div>
-                  <div className="text-sm font-medium text-white">{profile.availability}</div>
+                  <div className="text-[0.6rem] uppercase tracking-widest text-muted-foreground mb-2">Availability</div>
+                  <div className="text-sm font-medium text-foreground">{profile.availability}</div>
                 </div>
               </div>
             </motion.div>

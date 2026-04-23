@@ -12,7 +12,7 @@ const techLogos = portfolioData.stack.map(tech => ({
 
 export function TechStack() {
   return (
-    <section id="stack" className="py-24 border-b border-zinc-900">
+    <section id="stack" className="py-32 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         <SectionHeader 
           title="Technology Stack" 
@@ -21,7 +21,7 @@ export function TechStack() {
         
         <div className="mt-12 space-y-12">
           <div className="relative group">
-            <div className="absolute -inset-x-6 -inset-y-4 bg-zinc-900/0 group-hover:bg-zinc-900/30 rounded-2xl transition-colors duration-500 -z-10" />
+            <div className="absolute -inset-x-6 -inset-y-4 bg-muted/0 group-hover:bg-muted/30 rounded-2xl transition-colors duration-500 -z-10" />
             <LogoLoop
               logos={techLogos}
               speed={40}
@@ -31,8 +31,7 @@ export function TechStack() {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#000000"
-              className="text-white/60 hover:text-white transition-colors duration-500"
+              className="text-foreground/60 hover:text-foreground transition-colors duration-500"
             />
           </div>
 
@@ -46,8 +45,7 @@ export function TechStack() {
               pauseOnHover={true}
               scaleOnHover={true}
               fadeOut={true}
-              fadeOutColor="#000000"
-              className="text-zinc-600"
+              className="text-muted-foreground"
             />
           </div>
         </div>

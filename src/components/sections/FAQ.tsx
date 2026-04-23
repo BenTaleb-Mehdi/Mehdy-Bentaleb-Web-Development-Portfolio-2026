@@ -25,9 +25,9 @@ export function FAQ() {
               </svg>
               FAQS
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium text-foreground mb-6">
               Have<br/>
-              <span className="text-zinc-600">Questions?</span>
+              <span className="text-muted-foreground">Questions?</span>
             </h2>
           </motion.div>
         </div>
@@ -41,11 +41,11 @@ export function FAQ() {
               return (
                 <div 
                   key={idx} 
-                  className="bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden cursor-pointer"
+                  className="bg-muted/40 border border-border rounded-xl overflow-hidden cursor-pointer"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                 >
                   <div className="px-6 py-5 flex items-center justify-between">
-                    <h3 className="text-base font-medium text-white flex items-center gap-3">
+                    <h3 className="text-base font-medium text-foreground flex items-center gap-3">
                       <span className="text-brand-muted">{faq.num}</span> {faq.question}
                     </h3>
                     <motion.div
@@ -66,7 +66,7 @@ export function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="px-6 pb-6 pt-2 text-brand-muted text-sm leading-relaxed border-t border-zinc-800/50 mt-2">
+                        <div className="px-6 pb-6 pt-2 text-brand-muted text-sm leading-relaxed border-t border-border mt-2">
                           {faq.answer}
                         </div>
                       </motion.div>

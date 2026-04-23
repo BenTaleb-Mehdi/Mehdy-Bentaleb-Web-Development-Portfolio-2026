@@ -21,7 +21,7 @@ export function Contact() {
   }));
 
   return (
-    <section id="contact" className="py-32 border-b border-zinc-900">
+    <section id="contact" className="py-32 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         <div className="flex flex-col gap-20">
           
@@ -42,10 +42,10 @@ export function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-white leading-none tracking-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-foreground leading-none tracking-tight"
             >
               LET’S BUILD <br />
-              <span className="text-zinc-800">SOMETHING</span> REAL.
+              <span className="text-border">SOMETHING</span> REAL.
             </motion.h2>
           </div>
 
@@ -54,7 +54,7 @@ export function Contact() {
             
             {/* Contact Actions */}
             <div className="flex flex-col gap-8">
-              <p className="text-xl text-zinc-400 font-light max-w-md leading-relaxed">
+              <p className="text-xl text-muted-foreground font-light max-w-md leading-relaxed">
                 Currently available for new projects and interesting collaborations. 
                 Drop me a line or find me on socials.
               </p>
@@ -62,16 +62,16 @@ export function Contact() {
               <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={copyToClipboard}
-                  className="group relative flex items-center gap-3 px-8 py-5 bg-white text-black font-bold rounded-2xl hover:bg-brand-green transition-all duration-300"
+                  className="group relative flex items-center gap-3 px-8 py-5 bg-foreground text-background font-bold rounded-2xl hover:bg-brand-green hover:text-background transition-all duration-300"
                 >
                   <Mail size={20} />
                   <span>{copied ? 'EMAIL COPIED!' : 'COPY EMAIL'}</span>
-                  {copied ? <Check size={18} className="text-black" /> : <Copy size={18} className="opacity-0 group-hover:opacity-100 transition-opacity" />}
+                  {copied ? <Check size={18} className="text-background" /> : <Copy size={18} className="opacity-0 group-hover:opacity-100 transition-opacity" />}
                 </button>
                 
                 <a 
                   href={`mailto:${email}`}
-                  className="flex items-center justify-center w-16 h-16 border border-zinc-800 rounded-2xl text-white hover:border-white transition-all duration-300"
+                  className="flex items-center justify-center w-16 h-16 border border-border rounded-2xl text-foreground hover:border-foreground transition-all duration-300"
                 >
                   <ExternalLink size={24} />
                 </a>
@@ -80,21 +80,21 @@ export function Contact() {
 
             {/* Profile Card */}
             <div className="lg:w-[450px]">
-              <div className="bg-zinc-900/40 border border-zinc-800/80 rounded-3xl p-8 h-full flex flex-col justify-center">
+              <div className="bg-muted/40 border border-border rounded-3xl p-8 h-full flex flex-col justify-center">
                 
                 <div className="flex items-center gap-4 mb-8">
                   <div className="relative">
                     <div className="w-2.5 h-2.5 bg-brand-green rounded-full animate-pulse" />
                     <div className="absolute inset-0 w-2.5 h-2.5 bg-brand-green rounded-full blur-[4px] opacity-60" />
                   </div>
-                  <span className="text-[0.65rem] font-mono text-zinc-400 uppercase tracking-[0.2em]">Available for work</span>
+                  <span className="text-[0.65rem] font-mono text-muted-foreground uppercase tracking-[0.2em]">Available for work</span>
                 </div>
 
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-zinc-800 bg-zinc-800">
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-border bg-muted">
                   <img src={portfolioData.profile.profileImg} alt={portfolioData.profile.name} className="w-full h-full object-cover" />
                 </div>
 
-                <p className="text-zinc-400 leading-relaxed mb-8 font-light italic">
+                <p className="text-muted-foreground leading-relaxed mb-8 font-light italic">
                   "My inbox is always open. Whether you have a project or just want to say Hi. I would love to hear from you."
                 </p>
 
@@ -105,7 +105,7 @@ export function Contact() {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer" 
-                      className="text-zinc-500 hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <social.icon size={18} />
                     </a>

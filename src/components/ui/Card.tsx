@@ -15,7 +15,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className={cn(
-          "rounded-xl border border-zinc-800 bg-black p-6",
+          "rounded-xl border border-zinc-900 bg-black p-6",
           glowOnHover && "transition-colors duration-300 hover:border-zinc-700 hover:shadow-[0_0_15px_rgba(255,255,255,0.03)]",
           className
         )}

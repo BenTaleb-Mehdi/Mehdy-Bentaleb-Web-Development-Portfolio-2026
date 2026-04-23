@@ -7,7 +7,7 @@ const educationData = (portfolioData as any).education || [];
 
 export function Education() {
   return (
-    <section id="education" className="py-32 border-b border-zinc-900">
+    <section id="education" className="py-32 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           <div className="lg:col-span-4">
@@ -18,7 +18,7 @@ export function Education() {
           </div>
           
           <div className="lg:col-span-8">
-            <div className="flex flex-col border-t border-zinc-900">
+            <div className="flex flex-col border-t border-border">
               {educationData.map((edu: any, idx: number) => (
                 <motion.div 
                   key={idx}
@@ -26,11 +26,11 @@ export function Education() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group flex flex-col md:flex-row py-10 border-b border-zinc-900 transition-colors duration-500 hover:bg-zinc-900/10 cursor-default"
+                  className="group flex flex-col md:flex-row py-10 border-b border-border transition-colors duration-500 hover:bg-muted/10 cursor-default"
                 >
                   <div className="md:w-1/3 mb-4 md:mb-0">
-                    <span className="text-[0.65rem] font-mono tracking-widest text-zinc-500 uppercase">{edu.duration}</span>
-                    <h3 className="text-xl font-medium text-white mt-2 group-hover:text-white transition-colors">
+                    <span className="text-[0.65rem] font-mono tracking-widest text-muted-foreground uppercase">{edu.duration}</span>
+                    <h3 className="text-xl font-medium text-foreground mt-2 group-hover:text-foreground transition-colors">
                       {edu.degree}
                     </h3>
                   </div>
@@ -42,15 +42,15 @@ export function Education() {
                           href={edu.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="text-sm font-medium text-zinc-300 hover:text-brand-green transition-colors"
+                          className="text-sm font-medium text-muted-foreground hover:text-brand-green transition-colors"
                         >
                           @{edu.school}
                         </a>
                       ) : (
-                        <span className="text-sm font-medium text-zinc-300">@{edu.school}</span>
+                        <span className="text-sm font-medium text-muted-foreground">@{edu.school}</span>
                       )}
                     </div>
-                    <p className="text-zinc-500 font-light leading-relaxed group-hover:text-zinc-400 transition-colors">
+                    <p className="text-muted-foreground font-light leading-relaxed group-hover:text-muted-foreground transition-colors">
                       {edu.description}
                     </p>
                   </div>

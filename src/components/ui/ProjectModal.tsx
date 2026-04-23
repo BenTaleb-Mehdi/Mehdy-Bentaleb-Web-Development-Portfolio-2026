@@ -66,7 +66,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+            className="absolute inset-0 bg-background/90 backdrop-blur-xl"
           />
 
           {/* Modal Content */}
@@ -75,18 +75,18 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-7xl max-h-[90vh] bg-black border border-zinc-800 rounded-3xl overflow-hidden flex flex-col md:flex-row"
+            className="relative w-full max-w-7xl max-h-[90vh] bg-background border border-border rounded-3xl overflow-hidden flex flex-col md:flex-row"
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 z-50 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors backdrop-blur-md"
+              className="absolute top-6 right-6 z-50 p-2 bg-foreground/10 hover:bg-foreground/20 rounded-full text-foreground transition-colors backdrop-blur-md"
             >
               <X size={20} />
             </button>
 
             {/* Left: Image/Video Preview */}
-            <div className="md:w-1/2 relative bg-zinc-900 overflow-hidden min-h-[300px] md:min-h-full flex items-center justify-center">
+            <div className="md:w-1/2 relative bg-muted overflow-hidden min-h-[300px] md:min-h-full flex items-center justify-center border-r border-border">
               <div className={`absolute inset-0 ${project.bgClass} opacity-40`} />
               
               <AnimatePresence mode="wait">
@@ -102,8 +102,8 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                     className="w-full h-full object-cover relative z-10"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-700 p-12 text-center">
-                    <div className="w-20 h-20 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground p-12 text-center">
+                    <div className="w-20 h-20 rounded-2xl bg-muted border border-border flex items-center justify-center mb-4">
                       <Play size={32} className="opacity-40" />
                     </div>
                     <p className="text-xs font-mono uppercase tracking-widest opacity-40">Project Preview Placeholder</p>
@@ -116,13 +116,13 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 z-20 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-all border border-white/10"
+                    className="absolute left-4 z-20 p-2 bg-background/50 hover:bg-background/70 rounded-full text-foreground transition-all border border-border/10"
                   >
                     <ChevronLeft size={24} />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 z-20 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-all border border-white/10"
+                    className="absolute right-4 z-20 p-2 bg-background/50 hover:bg-background/70 rounded-full text-foreground transition-all border border-border/10"
                   >
                     <ChevronRight size={24} />
                   </button>
@@ -136,7 +136,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                         className={`w-2 h-2 rounded-full transition-all ${
                           idx === currentImageIndex 
                             ? "bg-brand-green w-6" 
-                            : "bg-white/30 hover:bg-white/50"
+                            : "bg-foreground/30 hover:bg-foreground/50"
                         }`}
                       />
                     ))}
@@ -165,33 +165,33 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                 <span className="text-[0.65rem] font-mono tracking-widest text-brand-green uppercase py-1 px-3 border border-brand-green/30 rounded-full">
                   {project.type}
                 </span>
-                <span className="text-[0.65rem] font-mono tracking-widest text-zinc-500 uppercase flex items-center gap-1.5">
+                <span className="text-[0.65rem] font-mono tracking-widest text-muted-foreground uppercase flex items-center gap-1.5">
                   <Calendar size={12} />
                   {project.year}
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-8">
+              <h2 className="text-4xl md:text-5xl font-display font-medium text-foreground mb-8">
                 {project.title}
               </h2>
 
               <div className="space-y-8">
                 <div>
-                  <h4 className="text-xs font-mono tracking-widest text-zinc-500 uppercase mb-4">About the Project</h4>
-                  <p className="text-zinc-400 leading-relaxed text-lg font-light">
+                  <h4 className="text-xs font-mono tracking-widest text-muted-foreground uppercase mb-4">About the Project</h4>
+                  <p className="text-muted-foreground leading-relaxed text-lg font-light">
                     {project.fullDescription || project.description}
                   </p>
                 </div>
 
                 {project.stack && (
                   <div>
-                    <h4 className="text-xs font-mono tracking-widest text-zinc-500 uppercase mb-4 flex items-center gap-2">
+                    <h4 className="text-xs font-mono tracking-widest text-muted-foreground uppercase mb-4 flex items-center gap-2">
                        <Cpu size={14} />
                        Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.stack.map((item, idx) => (
-                        <span key={idx} className="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-lg text-xs text-zinc-300 font-medium">
+                        <span key={idx} className="px-3 py-1.5 bg-muted border border-border rounded-lg text-xs text-muted-foreground font-medium">
                           {item}
                         </span>
                       ))}
@@ -205,7 +205,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       href={project.demoUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-zinc-200 transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-background font-bold rounded-xl hover:opacity-90 transition-opacity"
                     >
                       LIVE DEMO
                       <ExternalLink size={18} />
@@ -216,7 +216,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                       href={project.codeUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-8 py-4 bg-zinc-900 text-white font-bold rounded-xl border border-zinc-800 hover:bg-zinc-800 transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 px-8 py-4 bg-muted text-foreground font-bold rounded-xl border border-border hover:bg-accent transition-colors"
                     >
                       SOURCE CODE
                       <Github size={18} />

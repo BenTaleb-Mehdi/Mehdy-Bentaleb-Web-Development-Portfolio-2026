@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -11,13 +12,16 @@ export default {
         display: ['Geist Sans', 'Inter', 'sans-serif'],
       },
       colors: {
-        background: '#000000',
-        foreground: '#FFFFFF',
+        background: 'rgb(var(--background) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        'muted-foreground': 'rgb(var(--muted-foreground) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
         brand: {
-          green: '#FFFFFF', // Overriding green back to white for the pure minimalist aesthetic
-          dark: '#000000',
-          muted: '#a1a1aa', // zinc-400
-        }
+          green: 'rgb(var(--brand-green) / <alpha-value>)',
+          dark: 'rgb(var(--brand-dark) / <alpha-value>)',
+          muted: 'rgb(var(--muted-foreground) / <alpha-value>)',
+        },
       },
     },
   },

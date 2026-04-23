@@ -22,7 +22,7 @@ export function ProjectGrid() {
   };
 
   return (
-    <section id="projects" className="py-32 border-b border-zinc-900">
+    <section id="projects" className="py-32 border-b border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
         <SectionHeader 
           title="Featured Projects" 
