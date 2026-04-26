@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Play, Calendar, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ExternalLink, Github, Play, Cpu, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 interface ProjectModalProps {
