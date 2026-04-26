@@ -13,7 +13,7 @@ import ClickSpark from './components/reactbits/ClickSpark';
 import { Chatbot } from './components/ui/Chatbot';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { SplashCursor } from './components/ui/SplashCursor';
-import { Preloader } from './components/ui/Preloader';
+import { LuxIntro } from './components/ui/LuxIntro';
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
@@ -74,7 +74,7 @@ function App() {
       duration={400}
     >
       <div className="min-h-screen bg-background text-foreground font-sans selection:bg-brand-green selection:text-brand-dark transition-colors duration-500">
-        {isLoading && <Preloader onLoadingComplete={() => setIsLoading(false)} />}
+        {isLoading && <LuxIntro onLoadingComplete={() => setIsLoading(false)} />}
         
         <div style={{ 
           opacity: isLoading ? 0 : 1, 

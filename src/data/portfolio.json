@@ -11,7 +11,8 @@
     "profileImg": "/images/profile.png",
     "resumeEn": "/resume-en.pdf",
     "resumeFr": "/resume-fr.pdf",
-    "logoText": "MB"
+    "logoText": "MB",
+    "logoImg": "/images/logo.png"
   },
   "navigation": {
     "menuItems": [
@@ -30,6 +31,34 @@
     ]
   },
   "projects": [
+       {
+  "title": "Coach Personnalisé",
+  "type": "Dual-App Fitness Ecosystem",
+  "year": "2026 - comming soon ",
+  "description": "Unified platform for sports coaches to manage clients and nutrition with a specialized mobile-first experience.",
+  "fullDescription": "A comprehensive PFE project consisting of a Web Management Platform and a Client Mobile App. Features a Service-Layer-driven 'Unified Nutrition Engine', role-based access control via Spatie, and a high-end minimalist interface.",
+  "bgClass": "bg-zinc-900/40",
+  "colSpan": "md:col-span-12",
+  "image": "/images/pfe-1.png",
+  "images": [
+    "/images/pfe-1.png",
+    "/images/pfe-2.png",
+    "/images/pfe-3.png",
+    "/images/pfe-4.png",
+    "/images/pfe-5.png",
+    "/images/pfe-6.png",
+    "/images/pfe-7.png",
+    "/images/pfe-8.png",
+    "/images/pfe-9.png",
+    "/images/pfe-10.png",
+    "/images/pfe-11.png",
+    "/images/pfe-12.png"
+  ],
+  "stack": ["Laravel 12", "TALL Stack", "Spatie", "NativePHP", "Service Pattern", "Pest"],
+  "demoUrl": "#",
+  "codeUrl": "https://github.com/BenTaleb-Mehdi/Project-PFE",
+  "videoUrl": ""
+},
     {
   "title": "StockMaster-Pro",
   "type": "Inventory Management System",
@@ -149,44 +178,20 @@
       "demoUrl": "#",
       "codeUrl": "https://github.com/BenTaleb-Mehdi/Market-Store",
       "videoUrl": "https://player.vimeo.com/video/1157974970"
-    },
-
-    {
-      "title": "Drive-Rent System",
-      "type": "Car Rental Platform",
-      "year": "2026",
-      "description": "Comprehensive platform for vehicle tracking and automated booking.",
-      "fullDescription": "A comprehensive car rental platform featuring real-time vehicle availability tracking, automated booking management, and a customer reservation portal.",
-      "bgClass": "bg-emerald-600/20",
-      "colSpan": "md:col-span-10",
-      "image": "/images/location-cars.png",
-      "images": [
-        "/images/location-cars.png",
-        "/images/location-cars2.png",
-        "/images/location-cars3.png",
-        "/images/location-cars4.png"
-      ],
-      "stack": ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Blade"],
-      "demoUrl": "#",
-      "codeUrl": "https://github.com/BenTaleb-Mehdi/project-location-cars",
-      "videoUrl": "https://player.vimeo.com/video/1157972833"
     }
+
+
 
   ],
   "education": [
-     {
-      "school": "Allal Fassi High School, Tangier",
-      "degree": "Baccalaureate in Life and Earth Sciences (SVT)",
-      "duration": "2021 - 2022",
-      "description": "The Baccalaureate in Life and Earth Sciences (SVT) is a major scientific field focused on biology, geology and the environment."
+      {
+      "school": "Solicode Tangier",
+      "degree": "Full-Stack Web Development Path",
+      "duration": "2025 - present",
+      "link": "https://solicode.co",
+      "description": "Advanced training in modern web frameworks and collaborative coding environments."
     },
-     {
-      "school": "American Language Center (ALC) Tangier",
-      "degree": "English Language Proficiency",
-      "duration": "01/2022 - 09/2022",
-      "link": "https://alctangier.org/",
-      "description": "Enhanced English communication skills and professional terminology."
-    },
+   
     {
       "school": "Miage Tangier",
       "degree": "Technician specializing in IT development",
@@ -194,12 +199,19 @@
       "link": "https://groupemiage.net",
       "description": "Deep dive into Backend architecture, MVC patterns, and Database optimization."
     },
+      {
+      "school": "American Language Center (ALC) Tangier",
+      "degree": "English Language Proficiency",
+      "duration": "01/2022 - 09/2022",
+      "link": "https://alctangier.org/",
+      "description": "Enhanced English communication skills and professional terminology."
+    },
+   
     {
-      "school": "Solicode Tangier",
-      "degree": "Full-Stack Web Development Path",
-      "duration": "2025 - present",
-      "link": "https://solicode.co",
-      "description": "Advanced training in modern web frameworks and collaborative coding environments."
+      "school": "Allal Fassi High School, Tangier",
+      "degree": "Baccalaureate in Life and Earth Sciences (SVT)",
+      "duration": "2021 - 2022",
+      "description": "The Baccalaureate in Life and Earth Sciences (SVT) is a major scientific field focused on biology, geology and the environment."
     }
    
   ],

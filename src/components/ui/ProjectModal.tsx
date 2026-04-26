@@ -23,10 +23,14 @@ interface ProjectModalProps {
 
 export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   // Reset index when modal opens or project changes
   useEffect(() => {
     setCurrentImageIndex(0);
+    setIsZoomed(false);
+    setZoomedImage(null);
   }, [project, isOpen]);
 
   // Prevent scrolling when modal is open
@@ -91,16 +95,20 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
               
               <AnimatePresence mode="wait">
                 {images.length > 0 ? (
-                  <motion.img
-                    key={currentImageIndex}
-                    src={images[currentImageIndex]}
-                    alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-full h-full object-cover relative z-10"
-                  />
+                    <motion.img
+                      key={currentImageIndex}
+                      src={images[currentImageIndex]}
+                      alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.3 }}
+                      onClick={() => {
+                        setZoomedImage(images[currentImageIndex]);
+                        setIsZoomed(true);
+                      }}
+                      className="w-full h-full object-cover relative z-10 cursor-zoom-in"
+                    />
                 ) : (
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground p-12 text-center">
                     <div className="w-20 h-20 rounded-2xl bg-muted border border-border flex items-center justify-center mb-4">
@@ -162,11 +170,11 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
             {/* Right: Info */}
             <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[0.65rem] font-mono tracking-widest text-brand-green uppercase py-1 px-3 border border-brand-green/30 rounded-full">
+                <span className="text-[0.65rem] font-mono tracking-widest text-brand-green uppercase py-1 px-3 border border-brand-green/50 rounded-full">
                   {project.type}
                 </span>
-                <span className="text-[0.65rem] font-mono tracking-widest text-muted-foreground uppercase flex items-center gap-1.5">
-                  <Calendar size={12} />
+                <span className="text-[0.65rem] font-mono tracking-widest text-foreground/60 dark:text-muted-foreground uppercase flex items-center gap-1.5">
+                  <Play size={12} className="opacity-40" />
                   {project.year}
                 </span>
               </div>
@@ -177,8 +185,8 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
               <div className="space-y-8">
                 <div>
-                  <h4 className="text-xs font-mono tracking-widest text-muted-foreground uppercase mb-4">About the Project</h4>
-                  <p className="text-muted-foreground leading-relaxed text-lg font-light">
+                  <h4 className="text-xs font-mono tracking-widest text-foreground/40 dark:text-muted-foreground uppercase mb-4">About the Project</h4>
+                  <p className="text-foreground/80 dark:text-muted-foreground leading-relaxed text-lg font-light">
                     {project.fullDescription || project.description}
                   </p>
                 </div>
@@ -191,7 +199,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.stack.map((item, idx) => (
-                        <span key={idx} className="px-3 py-1.5 bg-muted border border-border rounded-lg text-xs text-muted-foreground font-medium">
+                        <span key={idx} className="px-3 py-1.5 bg-muted border border-border rounded-lg text-xs text-foreground/70 dark:text-muted-foreground font-medium">
                           {item}
                         </span>
                       ))}
@@ -228,6 +236,38 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
           </motion.div>
         </div>
       )}
+
+      {/* Zoom Overlay */}
+      <AnimatePresence>
+        {isZoomed && zoomedImage && (
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsZoomed(false)}
+              className="absolute inset-0 bg-black/95 backdrop-blur-md"
+            />
+            
+            <button
+              onClick={() => setIsZoomed(false)}
+              className="absolute top-6 right-6 z-50 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors backdrop-blur-md"
+            >
+              <X size={24} />
+            </button>
+
+            <motion.img
+              src={zoomedImage}
+              alt="Zoomed Project"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="relative z-10 max-w-full max-h-full object-contain shadow-2xl"
+            />
+          </div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 }

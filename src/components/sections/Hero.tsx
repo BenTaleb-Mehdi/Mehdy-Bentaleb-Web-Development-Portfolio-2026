@@ -12,6 +12,14 @@ export function Hero() {
   const { profile } = portfolioData;
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Spotlight position
   const mouseX = useMotionValue(0);
@@ -56,13 +64,13 @@ export function Hero() {
     <section 
       id="home" 
       ref={sectionRef}
-      className="relative pt-24 pb-20 md:pt-30 md:pb-24 flex flex-col justify-center min-h-[100vh] border-b border-border overflow-hidden bg-background cursor-default"
+      className="relative pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-30 md:pb-24 flex flex-col justify-center min-h-screen border-b border-border overflow-hidden bg-background cursor-default"
     >
       {/* Interactive Background Layers */}
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {/* Particles */}
         <Particles
-          particleCount={150}
+          particleCount={isMobile ? 60 : 150}
           particleSpread={12}
           speed={0.15}
           particleColors={['#a1a1aa', '#71717a', '#52525b']}
@@ -115,7 +123,7 @@ export function Hero() {
             </div>
           </Magnet>
 
-          <h1 className="text-5xl md:text-7xl lg:text-[5rem] font-display font-bold tracking-tighter text-foreground mb-8 leading-[0.9] drop-shadow-2xl break-words max-w-4xl">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[5rem] font-display font-bold tracking-tighter text-foreground mb-8 leading-[0.9] drop-shadow-2xl break-words max-w-4xl">
             <BlurText 
               text={profile.tagline} 
               delay={50} 
@@ -139,7 +147,7 @@ export function Hero() {
             <Magnet padding={50} magnetStrength={3}>
               <CustomButton 
                 onClick={() => setIsResumeModalOpen(true)}
-                className="bg-transparent border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:border-muted-foreground/30 px-10 py-5 text-lg transition-all duration-300"
+                className="bg-muted/30 border border-muted-foreground/20 text-foreground hover:text-foreground hover:bg-muted/80 hover:border-muted-foreground/50 px-10 py-5 text-lg transition-all duration-300"
               >
                 View Resume
               </CustomButton>

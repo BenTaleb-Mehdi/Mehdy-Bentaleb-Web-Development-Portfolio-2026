@@ -17,13 +17,13 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
   }, []);
 
   const handleEnd = () => {
-    // Delay slightly to show 100% for a moment
+    // Even faster transition
     setTimeout(() => {
       setIsFinished(true);
       setTimeout(() => {
         onLoadingComplete();
-      }, 1000); // Match exit animation duration
-    }, 1200);
+      }, 400); // Faster exit
+    }, 300);
   };
 
   return (
@@ -33,7 +33,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
           initial={{ opacity: 1 }}
           exit={{ 
             y: '-100%', 
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+            transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } 
           }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black overflow-hidden"
         >
@@ -91,13 +91,13 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
               <div className="flex justify-between items-end mb-2">
                  <span className="text-[10px] text-zinc-600 uppercase font-bold tracking-tighter">Loading System</span>
                  <div className="text-2xl font-black text-white italic leading-none">
-                   <CountUp
-                     from={0}
-                     to={100}
-                     duration={2.5}
-                     onEnd={handleEnd}
-                     className="tabular-nums"
-                   />
+                    <CountUp
+                      from={0}
+                      to={100}
+                      duration={0.8}
+                      onEnd={handleEnd}
+                      className="tabular-nums"
+                    />
                    <span className="text-xs ml-1">%</span>
                  </div>
               </div>
@@ -108,7 +108,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onLoadingComplete }) => {
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
-                  transition={{ duration: 2.5, ease: "easeInOut" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
                   className="absolute top-0 left-0 h-full bg-brand-green shadow-[0_0_10px_#bef264]"
                 />
               </div>
