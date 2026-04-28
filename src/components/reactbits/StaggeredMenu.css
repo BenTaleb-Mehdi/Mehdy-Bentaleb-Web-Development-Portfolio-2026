@@ -138,7 +138,7 @@
   display: flex;
   flex-direction: column;
   padding: 6em 2em 2em 2em;
-  overflow-y: auto;
+  overflow: hidden;          /* panel itself does NOT scroll */
   z-index: 10;
   pointer-events: auto;
   opacity: 0;
@@ -176,18 +176,33 @@
 }
 
 .sm-panel-inner {
-  flex: 1;
+  flex: 1 1 0;          /* fill remaining height */
+  min-height: 0;        /* crucial: allows children to overflow */
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  overflow: hidden;     /* clip; list handles its own scroll */
+}
+
+/* The nav list is the only scrollable zone */
+.sm-panel-list {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  /* hide scrollbar visually but keep it functional */
+  scrollbar-width: none;
+}
+.sm-panel-list::-webkit-scrollbar {
+  display: none;
 }
 
 .sm-socials {
-  margin-top: auto;
-  padding-top: 2rem;
+  flex: 0 0 auto;       /* never shrinks — always fully visible */
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(128,128,128,0.25);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 .sm-socials-title {
@@ -264,14 +279,17 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  /* Gap also scales with height so items don't pile up on short screens */
+  gap: clamp(1.05rem, 1.2svh, 2.5rem);
+  /* flex layout kept from the rule above — do not override flex/overflow here */
 }
 
 .sm-panel-item {
   position: relative;
   color: rgb(var(--foreground));
   font-weight: 600;
-  font-size: 3.5rem;
+  /* Scale by both width AND height — whichever is the constraint */
+  font-size: clamp(1.2rem, min(4.5vw, 4.7svh), 3.5rem);
   cursor: pointer;
   line-height: 1;
   letter-spacing: -2px;
@@ -321,8 +339,8 @@
   content: counter(smItem, decimal-leading-zero);
   position: absolute;
   top: 0.1em;
-  right: 2.8em;
-  font-size: 18px;
+  right: 0; /* Changed from 2.8em to prevent overlapping text */
+  font-size: clamp(12px, 1.5vw, 18px); /* Scale slightly on small screens */
   font-weight: 400;
   color: var(--sm-accent, #5227ff);
   letter-spacing: 0;
@@ -343,14 +361,35 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .staggered-menu-panel {
     width: 100%;
     left: 0;
     right: 0;
+    padding: 5em 1.5em 1.5em 1.5em;
+    overflow: hidden;
   }
 
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
+  /* On small screens, width is the main constraint — vw wins */
+  .sm-panel-item {
+    font-size: clamp(1.2rem, min(8vw, 5.8svh), 2.6rem);
+    letter-spacing: -1px;
+  }
+
+  .sm-socials {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .sm-socials-link {
+    font-size: 0.95rem;
   }
 }
+
+@media (max-width: 480px) {
+  .sm-panel-item {
+    font-size: clamp(1.1rem, min(9vw, 5.5svh), 2.2rem);
+  }
+}
+
+
