@@ -23,7 +23,7 @@ import { ScrollToTop } from './components/ui/ScrollToTop';
 import { Bot, Mail, Instagram, Linkedin, Github } from 'lucide-react';
 import portfolioData from './data/portfolio.json';
 import { motion } from 'framer-motion';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
