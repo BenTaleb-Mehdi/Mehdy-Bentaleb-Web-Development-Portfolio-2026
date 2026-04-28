@@ -87,7 +87,7 @@ export function ResumeModal({ isOpen, onClose, resumePaths }: ResumeModalProps) 
             </div>
 
             {/* Content Body */}
-            <div className={`relative flex-1 flex flex-col min-h-0 ${selectedVersion ? 'overflow-hidden' : 'overflow-y-auto md:overflow-y-hidden'}`}>
+            <div className={`relative flex-1 flex flex-col min-h-0 overflow-y-auto ${selectedVersion ? 'overflow-hidden' : ''}`}>
               <AnimatePresence mode="wait">
                 {!selectedVersion ? (
                   <motion.div 
@@ -95,7 +95,7 @@ export function ResumeModal({ isOpen, onClose, resumePaths }: ResumeModalProps) 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
-                    className="p-8 md:p-16 flex flex-col items-center justify-center gap-8 md:gap-12 text-center pb-12"
+                    className="p-6 md:p-10 flex flex-col items-center justify-center gap-6 md:gap-10 text-center pb-12"
                   >
                     <div className="max-w-sm space-y-4">
                       <h4 className="text-3xl font-display font-medium text-foreground tracking-tight">Select Version</h4>
