@@ -23,7 +23,7 @@ import { ScrollToTop } from './components/ui/ScrollToTop';
 import { Bot, Mail, Instagram, Linkedin, Github } from 'lucide-react';
 import portfolioData from './data/portfolio.json';
 import { motion } from 'framer-motion';
-
+import { Analytics } from '@vercel/analytics/next';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -80,6 +80,7 @@ function App() {
           opacity: isLoading ? 0 : 1, 
           transition: 'opacity 0.8s ease' 
         }}>
+           <Analytics />
           <SplashCursor />
           <CustomCursor />
           <Navbar />
