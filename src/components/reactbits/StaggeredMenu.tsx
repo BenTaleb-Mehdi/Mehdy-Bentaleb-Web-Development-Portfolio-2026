@@ -460,6 +460,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     aria-label={it.ariaLabel} 
                     data-index={idx + 1}
                     onClick={closeMenu}
+                    tabIndex={open ? 0 : -1}
                   >
                     <span className="sm-panel-itemLabel">{it.label}</span>
                   </a>
@@ -479,7 +480,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               <ul className="sm-socials-list" role="list">
                 {socialItems.map((s, i) => (
                   <li key={s.label + i} className="sm-socials-item">
-                    <a href={s.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link">
+                    <a href={s.link} target="_blank" rel="noopener noreferrer" className="sm-socials-link" aria-label={s.label} tabIndex={open ? 0 : -1}>
                       {s.icon ? s.icon : s.label}
                     </a>
                   </li>

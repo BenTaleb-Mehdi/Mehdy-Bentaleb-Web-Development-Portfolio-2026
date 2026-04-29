@@ -2,20 +2,23 @@ import { Navbar } from './components/sections/Navbar';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { TechStack } from './components/sections/TechStack';
-import { ProjectGrid } from './components/sections/ProjectGrid';
-import { HorizontalParallax } from './components/sections/HorizontalParallax';
-import { Experience } from './components/sections/Experience';
-import { Education } from './components/sections/Education';
-import { FAQ } from './components/sections/FAQ';
-import { Contact } from './components/sections/Contact';
-import ScrollVelocity from './components/reactbits/ScrollVelocity';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import Lenis from 'lenis';
+
 import ClickSpark from './components/reactbits/ClickSpark';
-import { Chatbot } from './components/ui/Chatbot';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { SplashCursor } from './components/ui/SplashCursor';
 import { LuxIntro } from './components/ui/LuxIntro';
-import { useEffect, useState } from 'react';
-import Lenis from 'lenis';
+
+const ProjectGrid = lazy(() => import('./components/sections/ProjectGrid').then(module => ({ default: module.ProjectGrid })));
+const HorizontalParallax = lazy(() => import('./components/sections/HorizontalParallax').then(module => ({ default: module.HorizontalParallax })));
+const Experience = lazy(() => import('./components/sections/Experience').then(module => ({ default: module.Experience })));
+const Education = lazy(() => import('./components/sections/Education').then(module => ({ default: module.Education })));
+const FAQ = lazy(() => import('./components/sections/FAQ').then(module => ({ default: module.FAQ })));
+const Contact = lazy(() => import('./components/sections/Contact').then(module => ({ default: module.Contact })));
+const ScrollVelocity = lazy(() => import('./components/reactbits/ScrollVelocity'));
+const Chatbot = lazy(() => import('./components/ui/Chatbot').then(module => ({ default: module.Chatbot })));
+
 import 'lenis/dist/lenis.css';
 import { SpeedDial } from './components/ui/SpeedDial';
 import { ContactModal } from './components/ui/ContactModal';
@@ -24,6 +27,7 @@ import { Bot, Mail, Instagram, Linkedin, Github } from 'lucide-react';
 import portfolioData from './data/portfolio.json';
 import { motion } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -40,7 +44,7 @@ function App() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
@@ -84,10 +88,13 @@ function App() {
           <SplashCursor />
           <CustomCursor />
           <Navbar />
-          <Chatbot isOpen={isChatbotOpen} setIsOpen={setIsChatbotOpen} />
+          <Suspense fallback={null}>
+            <Chatbot isOpen={isChatbotOpen} setIsOpen={setIsChatbotOpen} />
+          </Suspense>
           
           {/* Standalone AI Chatbot Toggle on Left */}
           <motion.button
+            aria-label="Toggle AI Chatbot"
             onClick={() => setIsChatbotOpen(!isChatbotOpen)}
             className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-[80] w-14 h-14 bg-foreground text-background shadow-xl rounded-full flex items-center justify-center focus:outline-none pointer-events-auto"
             whileHover={{ scale: 1.05 }}
@@ -110,39 +117,51 @@ function App() {
             </div>
 
             <div className="py-20 overflow-hidden">
-              <ScrollVelocity 
-                texts={['Design Driven Development', 'Creative Engineering']} 
-                velocity={100} 
-                className="text-muted-foreground uppercase italic font-black"
-              />
+              <Suspense fallback={<div className="h-20" />}>
+                <ScrollVelocity 
+                  texts={['Design Driven Development', 'Creative Engineering']} 
+                  velocity={100} 
+                  className="text-muted-foreground uppercase italic font-black"
+                />
+              </Suspense>
             </div>
 
-            <ProjectGrid />
+            <Suspense fallback={<div className="h-64" />}>
+              <ProjectGrid />
+            </Suspense>
 
             <div className="py-20 overflow-hidden">
-              <ScrollVelocity 
-                texts={['Impactful Experiences', 'Pixel Perfect Solutions']} 
-                velocity={-100} 
-                className="text-foreground/5 uppercase font-black"
-              />
+              <Suspense fallback={<div className="h-20" />}>
+                <ScrollVelocity 
+                  texts={['Impactful Experiences', 'Pixel Perfect Solutions']} 
+                  velocity={-100} 
+                  className="text-foreground/5 uppercase font-black"
+                />
+              </Suspense>
             </div>
 
-            <HorizontalParallax />
-
-            <Experience />
-            <Education />
+            <Suspense fallback={<div className="h-64" />}>
+              <HorizontalParallax />
+              <Experience />
+              <Education />
+            </Suspense>
 
             <div className="max-w-6xl mx-auto px-6 md:px-12 w-full border-b border-border">
-              <FAQ />
+              <Suspense fallback={<div className="h-64" />}>
+                <FAQ />
+              </Suspense>
             </div>
 
             <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
-              <Contact />
+              <Suspense fallback={<div className="h-64" />}>
+                <Contact />
+              </Suspense>
             </div>
           </main>
           
           <footer className="py-12 text-center text-sm font-medium text-muted-foreground border-t border-border flex flex-col items-center gap-6">
             <button 
+              aria-label="Open Contact Form"
               onClick={() => setIsContactModalOpen(true)}
               className="px-6 py-3 bg-foreground text-background rounded-full font-medium shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2"
             >
