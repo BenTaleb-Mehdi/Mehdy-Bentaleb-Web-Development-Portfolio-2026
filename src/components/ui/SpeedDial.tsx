@@ -87,6 +87,7 @@ export function SpeedDial({ actions, className = '', radius = 80 }: SpeedDialPro
         </AnimatePresence>
 
         <motion.button
+          aria-label={isOpen ? "Close speed dial" : "Open speed dial"}
           onClick={() => setIsOpen(!isOpen)}
           className="relative z-10 flex items-center justify-center w-14 h-14 bg-foreground text-background shadow-xl rounded-full focus:outline-none pointer-events-auto"
           whileHover={{ scale: 1.05 }}

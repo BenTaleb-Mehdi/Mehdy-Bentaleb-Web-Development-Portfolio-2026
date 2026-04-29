@@ -42,6 +42,7 @@ export function ProjectCard({
             src={image} 
             alt={title} 
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover opacity-90 dark:opacity-80 group-hover:opacity-100 transition-opacity duration-1000" 
           />
         )}
