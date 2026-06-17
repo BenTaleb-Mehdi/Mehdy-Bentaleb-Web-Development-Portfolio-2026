@@ -1,42 +1,36 @@
-# Mehdi Bentaleb - Full Stack Web Developer 🚀
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**Based in Tangier, Morocco 🇲🇦**
+## Getting Started
 
-Hi! I'm Mehdi Bentaleb, a passionate Full-Stack Developer specializing in high-performance web applications using **Laravel** and **React**. I combine robust backend architecture with stunning frontend experiences to deliver digital solutions that defy gravity.
+First, run the development server:
 
-## 👨‍💻 Profile
-- **Role:** Full-Stack Developer
-- **Location:** Tangier, Morocco
-- **Email:** [Mehdibentaleb548@gmail.com](mailto:Mehdibentaleb548@gmail.com)
-- **LinkedIn:** [linkedin.com/in/mehdy-bentaleb](https://linkedin.com/in/mehdy-bentaleb)
-- **GitHub:** [github.com/mehdy-bentaleb](https://github.com/mehdy-bentaleb)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## 🎓 Education
-**Technician Specialized in IT Development**
-*Solicode & Miage Tangier (2022 - 2025)*
-- Focused on software engineering, database management, and modern web frameworks.
-- Mastered the art of clean code and performance optimization.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🛠️ Tech Stack
-I build scalable solutions using:
-- **Backend:** Laravel (Expert), PHP, MySQL, Spatie, Java/Kotlin
-- **Frontend:** React, Next.js, Tailwind CSS, JavaScript (ES6)
-- **Tools:** Git, Docker, VS Code
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 💼 Featured Projects
-### [Luxury Flower E-Commerce](https://mehdi-bentaleb.vercel.app/)
-A premium e-commerce platform for a flower shop featuring:
-- **Spatie-powered Admin Dashboard** for inventory and order management.
-- Seamless, responsive frontend built with Tailwind CSS.
-- Optimized for mobile and SEO.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### [Ban's Coffee Platform](https://mehdi-bentaleb.vercel.app/)
-A modern, interactive coffee shop experience:
-- Dynamic product pages with smooth animations.
-- Fully responsive design.
+## Learn More
 
-## 🌟 Philosophy
-I believe in writing code that is not only functional but also maintainable and performant. My background at Solicode has instilled a discipline for best practices and a continuous drive for learning the latest technologies.
+To learn more about Next.js, take a look at the following resources:
 
----
-*Open to freelance opportunities and full-time roles in Tangier and remote.*
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
