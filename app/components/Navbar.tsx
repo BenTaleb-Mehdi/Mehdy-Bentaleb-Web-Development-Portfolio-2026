@@ -4,13 +4,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { GlobeIcon } from './Icons';
-import { useLanguage } from '@/context/LanguageContext'; // ZID HADI
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   
-  // KHEDDEM HOOK DYAL L-LOGHA
   const { language, setLanguage, t } = useLanguage(); 
 
   const languages = [
@@ -18,6 +17,13 @@ export default function Navbar() {
     { code: 'fr', label: 'FR' },
     { code: 'es', label: 'ES' }
   ] as const;
+
+  // Dictionnaire local sghir lil-Blog link link static f d-nav translation context
+  const blogLabel = {
+    en: "Blog",
+    fr: "Blog",
+    es: "Blog"
+  };
 
   return (
     <>
@@ -27,15 +33,17 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative">
           <Link href="/" className="text-sm font-bold tracking-tight text-[#111111] z-50">
-            MB.
+            MB<span className="text-gray-400 font-light">.b</span>
           </Link>
           
+          {/* DESKTOP NAVIGATION */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#737373]">
-            {/* DABA KANKHEDMO B "t.nav..." F BLAST TEXT STATIQUE */}
-            <Link href="#about" className="hover:text-[#111111] transition-colors">{t.nav.about}</Link>
-            <Link href="#work" className="hover:text-[#111111] transition-colors">{t.nav.work}</Link>
-            <Link href="#expertise" className="hover:text-[#111111] transition-colors">{t.nav.expertise}</Link>
-            <Link href="#contact" className="hover:text-[#111111] transition-colors">{t.nav.contact}</Link>
+            <a href="/#about" className="hover:text-[#111111] transition-colors">{t.nav.about}</a>
+            <a href="/#work" className="hover:text-[#111111] transition-colors">{t.nav.work}</a>
+            <a href="/#expertise" className="hover:text-[#111111] transition-colors">{t.nav.expertise}</a>
+            {/* ZDNA L-BLOG LINK HNA 👇 */}
+            <a href="/#blog" className="hover:text-[#111111] transition-colors">{blogLabel[language] || blogLabel.en}</a>
+            <a href="/#contact" className="hover:text-[#111111] transition-colors">{t.nav.contact}</a>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-4 z-50">
@@ -60,7 +68,7 @@ export default function Navbar() {
                       <button
                         key={lang.code}
                         onClick={() => {
-                          setLanguage(lang.code); // HNA KANBEDLOU L-LOGHA
+                          setLanguage(lang.code);
                           setIsLangOpen(false);
                         }}
                         className={`text-center px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${language === lang.code ? 'font-bold text-[#111111]' : 'text-gray-500'}`}
@@ -80,6 +88,7 @@ export default function Navbar() {
               {t.nav.letsTalk}
             </a>
             
+            {/* Mobile Menu Icon */}
             <button 
               className="md:hidden p-2 text-[#111111]"
               onClick={() => setIsOpen(!isOpen)}
@@ -96,7 +105,7 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Dropdown */}
+      {/* MOBILE MENU PANEL (M9ADD MTERJEM + FIIH L-BLOG) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -106,16 +115,19 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center md:hidden"
           >
             <div className="flex flex-col items-center gap-8 text-2xl font-light text-[#111111]">
-              <Link href="#about" onClick={() => setIsOpen(false)}>About</Link>
-              <Link href="#work" onClick={() => setIsOpen(false)}>Work</Link>
-              <Link href="#expertise" onClick={() => setIsOpen(false)}>Expertise</Link>
-              <Link href="#contact" onClick={() => setIsOpen(false)}>Contact</Link>
+              <a href="/#about" onClick={() => setIsOpen(false)}>{t.nav.about}</a>
+              <a href="/#work" onClick={() => setIsOpen(false)}>{t.nav.work}</a>
+              <a href="/#expertise" onClick={() => setIsOpen(false)}>{t.nav.expertise}</a>
+              {/* LINK BLOG MOBILE 👇 */}
+              <a href="/#blog" onClick={() => setIsOpen(false)}>{blogLabel[language] || blogLabel.en}</a>
+              <a href="/#contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</a>
+              
               <a 
                 href={`mailto:${t.profile.email}`} 
-                className="mt-4 text-base font-medium text-white bg-[#111111] px-8 py-3 rounded-full"
+                className="mt-4 text-base font-medium text-white bg-[#111111] px-8 py-3 rounded-full shadow-md"
                 onClick={() => setIsOpen(false)}
               >
-                Let's Talk
+                {t.nav.letsTalk}
               </a>
             </div>
           </motion.div>

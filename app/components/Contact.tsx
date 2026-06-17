@@ -18,7 +18,7 @@ export default function Contact() {
       whatsNext: "Et ensuite ?",
       headingNormal: "Travaillons ",
       headingItalic: "ensemble.",
-      subText: "Que vous ayez un proyecto en tête ou que vous vouliez simplement dire bonjour, ma boîte de réception est toujours ouverte. Je ferai de mon mieux pour vous répondre !"
+      subText: "Que vous ayez un projet en tête ou que vous vouliez simplement dire bonjour, ma boîte de réception est toujours ouverte. Je ferai de mon mieux pour vous répondre !"
     },
     es: {
       whatsNext: "¿Qué sigue?",
@@ -47,13 +47,14 @@ export default function Contact() {
           <span className="font-serif italic text-gray-400">{text.headingItalic}</span>
         </h3>
         
-        <p className="text-gray-500 font-light text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+        <p className="text-gray-500 font-light text-base sm:text-lg mb-12 max-w-xl mx-auto leading-relaxed">
           {text.subText}
         </p>
         
+        {/* ⚠️ RESPONSIVE FIX DIAL EMAIL HNA 👇 */}
         <a 
           href={`mailto:${t.profile.email}`}
-          className="inline-block border-b-2 border-[#111111] pb-2 text-2xl md:text-4xl font-medium text-[#111111] hover:text-gray-500 hover:border-gray-500 transition-colors duration-300"
+          className="inline-block border-b-2 border-[#111111] pb-1 text-base sm:text-2xl md:text-4xl font-medium text-[#111111] hover:text-gray-500 hover:border-gray-500 transition-colors duration-300 max-w-full break-all"
         >
           {t.profile.email}
         </a>
