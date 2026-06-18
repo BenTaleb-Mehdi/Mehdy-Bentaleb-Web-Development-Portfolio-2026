@@ -9,7 +9,7 @@ import Contact from './components/Contact'; // Jdid
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop'; // Jdid
 import Chatbot from './components/Chatbot'; // Jdid
-
+import { Analytics } from '@vercel/analytics/next';
 export default function Home() {
   return (
     <main className="bg-[#FAFAFA] min-h-screen relative selection:bg-[#111111] selection:text-white font-sans overflow-x-hidden">
@@ -21,7 +21,7 @@ export default function Home() {
       <Blog />
       <Contact />
       <Footer />
-      
+      <Analytics />
       {/* Floating Elements */}
       <ScrollToTop />
       <Chatbot />

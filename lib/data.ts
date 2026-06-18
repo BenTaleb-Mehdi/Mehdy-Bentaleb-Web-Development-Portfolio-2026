@@ -231,3 +231,35 @@ export const translations = {
     ]
   }
 };
+
+export const seoInsightsData = {
+  organic: [
+    {
+      title: "Web Developer jobs in Morocco - LinkedIn",
+      link: "https://uk.linkedin.com/jobs/web-developer-jobs-london-reino-unido",
+      snippet: "100 Web Developer Jobs in Morocco · Développeur intégrateur Front-end · Front-End Developer React JS (H/F)...",
+      position: 1
+    },
+    {
+      title: "Hire the Best Web Application Developers in Morocco - Upwork",
+      link: "https://www.upwork.com/hire/web-application-freelancers/ma/",
+      snippet: "If you need a Full Stack Developer who understands both frontend experience and backend architecture, you're in the right place.",
+      position: 3
+    }
+  ],
+  peopleAlsoAsk: [
+    {
+      question: "How much do full-stack developers make in Morocco?",
+      snippet: "The salary trajectory of a Full Stack Developer ranges between locations and employers. The salary starts at MAD 120,011 per year (estimate) and goes up to MAD 284,561 per year.",
+    },
+    {
+      question: "How much do developers make in Morocco?",
+      snippet: "Software developers in Morocco earn $52K–$94K annually in 2026, with senior contract rates between $30–$41/hr and strong-senior rates reaching $45/hr.",
+    }
+  ],
+  relatedSearches: [
+    "Developer full stack morocco salary", 
+    "Developer full stack morocco jobs", 
+    "Hire Laravel Next.js developer Morocco" // Zidt lik hada mn 3ndi fih l-stack dyalk ;)
+  ]
+};
