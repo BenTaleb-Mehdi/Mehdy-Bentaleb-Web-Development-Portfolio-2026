@@ -1,7 +1,7 @@
 // components/Hero.tsx
 'use client';
 import { motion, Variants } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import Link from 'next/link';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { useLanguage } from '@/context/LanguageContext';
@@ -66,11 +66,20 @@ export default function Hero() {
           </motion.p>
 
           {/* Fixina tag d l-sedda hna ta hiya: </motion.div> */}
-          <motion.div variants={fadeUp} className="flex items-center gap-6">
+          <motion.div variants={fadeUp} className="flex items-center gap-4">
             <Link className="group flex items-center gap-2 bg-[#111111] text-white px-6 py-3 rounded-xl text-sm font-medium hover:bg-gray-800 transition-all" href="#work">
               {t.nav.work}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
             </Link>
+
+            <a
+              href="/cv.pdf"
+              download
+              className="group flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium text-[#111111] border border-gray-200 hover:border-gray-400 hover:bg-gray-50 transition-all"
+            >
+              <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform"/>
+              Download CV
+            </a>
 
             <div className="flex items-center gap-4">
               <a href={t.profile.socials.github} target="_blank" className="text-gray-400 hover:text-[#111111] transition-colors p-2">
