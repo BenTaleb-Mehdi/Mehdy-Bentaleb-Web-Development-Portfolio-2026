@@ -9,9 +9,9 @@ export default function Blog() {
   const { language } = useLanguage();
 
   const localTexts = {
-    en: { title: "Writing.", sub: "Thoughts on software development, design, and web ecosystem.", read: "Read full article →" },
-    fr: { title: "Blog.", sub: "Réflexions sur le développement logiciel, le design et la tech.", read: "Lire l'article →" },
-    es: { title: "Blog.", sub: "Reflexiones sobre desarrollo de software, diseño y tecnología.", read: "Leer artículo →" }
+    en: { title: "Writing.", sub: "Thoughts on software development, design, and web ecosystem.", read: "Read full article →", viewAll: "View all articles →" },
+    fr: { title: "Blog.", sub: "Réflexions sur le développement logiciel, le design et la tech.", read: "Lire l'article →", viewAll: "Voir tous les articles →" },
+    es: { title: "Blog.", sub: "Reflexiones sobre desarrollo de software, diseño y tecnología.", read: "Leer artículo →", viewAll: "Ver todos los artículos →" }
   };
 
   const text = localTexts[language] || localTexts.en;
@@ -28,8 +28,8 @@ export default function Blog() {
         <p className="text-[#737373] font-light text-lg">{text.sub}</p>
       </div>
 
-      <div className="space-y-12">
-        {blogPosts.map((post, index) => {
+      <div className="grid gap-6 md:grid-cols-2">
+        {blogPosts.slice(0, 4).map((post, index) => {
           const title = post.title[language] || post.title.en;
           const description = post.description[language] || post.description.en;
 
@@ -38,42 +38,51 @@ export default function Blog() {
               key={post.slug}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group border-b border-gray-100 pb-8 flex flex-col md:flex-row md:items-baseline justify-between gap-4"
             >
-              <div className="max-w-2xl">
-                <div className="flex items-center gap-4 mb-2">
-                  <span className="text-xs font-medium text-gray-400">{post.date}</span>
-                  <span className="text-xs font-medium text-gray-400">•</span>
-                  <span className="text-xs font-medium text-gray-400">{post.readTime}</span>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="block h-full border border-gray-200 rounded-xl p-6 hover:border-gray-400 transition-colors"
+              >
+                <div className="flex items-center gap-3 mb-3 text-xs font-medium text-gray-400">
+                  <span>{post.date}</span>
+                  <span>&bull;</span>
+                  <span>{post.readTime}</span>
                 </div>
-                
-                <h3 className="text-xl font-medium text-[#111111] mb-2">
+
+                <h3 className="text-lg font-medium text-[#111111] mb-2 leading-snug">
                   {title}
                 </h3>
-                
-                <p className="text-sm text-[#737373] font-light leading-relaxed mb-4">
+
+                <p className="text-sm text-[#737373] font-light leading-relaxed mb-4 line-clamp-3">
                   {description}
                 </p>
 
-                <Link 
-                  href={`/blog/${post.slug}`}
-                  className="text-sm font-medium text-[#111111] hover:text-gray-500 underline underline-offset-4 transition-colors"
-                >
-                  {text.read}
-                </Link>
-              </div>
-
-              <div className="flex flex-wrap gap-2 shrink-0">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="text-xs bg-gray-50 border border-gray-100 text-[#111111] px-2.5 py-1 rounded-md font-medium">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span key={tag} className="text-xs bg-gray-50 border border-gray-100 text-[#111111] px-2.5 py-1 rounded-md font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
             </motion.div>
           );
         })}
       </div>
+
+      {blogPosts.length > 4 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#111111] border border-gray-200 rounded-xl px-6 py-3 hover:border-gray-400 hover:bg-gray-50 transition-all"
+          >
+            {text.viewAll}
+          </Link>
+        </motion.div>
+      )}
     </section>
   );
 }
