@@ -41,8 +41,7 @@ export default function Navbar() {
             <a href="/#about" className="hover:text-[#111111] transition-colors">{t.nav.about}</a>
             <a href="/#work" className="hover:text-[#111111] transition-colors">{t.nav.work}</a>
             <a href="/#expertise" className="hover:text-[#111111] transition-colors">{t.nav.expertise}</a>
-            {/* ZDNA L-BLOG LINK HNA 👇 */}
-            <a href="/#blog" className="hover:text-[#111111] transition-colors">{blogLabel[language] || blogLabel.en}</a>
+            <Link href="/blog" className="hover:text-[#111111] transition-colors">{blogLabel[language] || blogLabel.en}</Link>
             <a href="/#contact" className="hover:text-[#111111] transition-colors">{t.nav.contact}</a>
           </div>
 
@@ -118,8 +117,7 @@ export default function Navbar() {
               <a href="/#about" onClick={() => setIsOpen(false)}>{t.nav.about}</a>
               <a href="/#work" onClick={() => setIsOpen(false)}>{t.nav.work}</a>
               <a href="/#expertise" onClick={() => setIsOpen(false)}>{t.nav.expertise}</a>
-              {/* LINK BLOG MOBILE 👇 */}
-              <a href="/#blog" onClick={() => setIsOpen(false)}>{blogLabel[language] || blogLabel.en}</a>
+              <Link href="/blog" onClick={() => setIsOpen(false)}>{blogLabel[language] || blogLabel.en}</Link>
               <a href="/#contact" onClick={() => setIsOpen(false)}>{t.nav.contact}</a>
               
               <a 
